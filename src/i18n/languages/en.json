@@ -1,0 +1,16 @@
+{
+  "SEO_TITLE_1": "Porfolio - Nicodev 💻",
+  "SEO_DESCRIPTION": "Welcome to my professional full stack developer portfolio. Explore my profile, projects, and experience. Feel free to reach out for collaborations and web development opportunities.",
+  "SEO": {
+    "ERROR_404_TITLE": "Page not found 😭",
+    "ERROR_404_DESCRIPTION": "Sorry, we couldn't find the page you were looking for.",
+    "ERROR_404_BACK": "Go back to home"
+  },
+  "HEADER": {
+    "LOGO": "Return to home"
+  },
+  "HEADER_EXPERIENCE": "Expirience",
+  "HEADER_PROJECT": "Projects",
+  "HEADER_ABOUTME": "About me",
+  "HEADER_CONTACT": "Contact"
+}

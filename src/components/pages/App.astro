@@ -1,0 +1,57 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Presentation from "@/components/Presentation.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Projects from "@/components/Projects.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION}>
+  <Header />
+  <main class="max-w-[1200px] mx-auto snap-mandatory snap-y scroll-smooth">
+    <SectionContainer>
+      <Presentation />
+    </SectionContainer>
+    <SectionContainer id="projects" class="relative place-content-stretch">
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="aboutMe" class="relative place-content-stretch">
+      <AboutMe />
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>

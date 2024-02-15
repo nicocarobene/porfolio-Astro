@@ -1,0 +1,36 @@
+---
+import VsCode from "./icons/VsCode.astro";
+import CardProject from "./CardProject.astro";
+import ArrowRight from "./icons/ArrowRight.astro";
+import Develop from "./icons/Develop.astro";
+import TitleSection from "./TitleSection.astro";
+---
+
+<TitleSection>
+  <span class="bg-gray-500 rounded-full p-1">
+    <Develop class="w-6 h-6" />
+  </span>Projects
+</TitleSection>
+<article
+  id="projects"
+  class="grid auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
+>
+  <CardProject title="Extension" class="from-violet-500 to-fuchsia-500">
+    <VsCode slot="icon" class="w-6 h-6" />
+  </CardProject>
+
+  <CardProject title="Project" class="from-blue-500 to-purple-500">
+    <Develop slot="icon" class="w-6 h-6" />
+  </CardProject>
+
+  <CardProject title="Video Games" class="from-rose-500 to-orange-500">
+    <picture slot="icon">
+      <source
+        srcset="/projects/gamesMobile.avif"
+        type="image/avif"
+        media="(max-width: 767px)"
+      />
+      <img src="/projects/games.png" alt="video games" class="w-8 h-8 z-10" />
+    </picture>
+  </CardProject>
+</article>

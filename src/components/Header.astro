@@ -1,0 +1,171 @@
+---
+import { getI18N } from "@/i18n";
+import ThemeToggle from "./ThemeToggle.astro";
+import HeaderLink from "./HeaderLink.astro";
+import LanguageSelector from "./LanguageSelector.astro";
+import MenuIcon from "./icons/MenuIcon.astro";
+
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<header
+  class="fixed top-2 z-20 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    id="navDesktop"
+    class="z-30 hidden md:flex px-3 gap-3 text-sm font-medium rounded-full justify-center items-center"
+  >
+    <HeaderLink class="text__glowing" href="#">
+      {t("nav.expirience")}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" href="#">
+      {t("nav.projects")}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" href="#">
+      {t("nav.aboutMe")}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" href="#">
+      {t("nav.contact")}
+    </HeaderLink>
+    <LanguageSelector />
+    <ThemeToggle />
+  </nav>
+  <nav
+    class="md:hidden hidden animate-fade-left mobile backdrop-blur-sm h-[dvh-3.5rem] absolute top-0 right-[calc(100vw-11.5rem)]"
+  >
+    <ul class="flex flex-col gap-4 px-2 dark:text-gray-200">
+      <HeaderLink class="text__glowing hover:font-bold" href="#projects">
+        {t("nav.projects")}
+      </HeaderLink>
+      <HeaderLink class="text__glowing hover:font-bold" href="#aboutMe">
+        {t("nav.aboutMe")}
+      </HeaderLink>
+      <HeaderLink class="text__glowing hover:font-bold" href="#">
+        {t("nav.contact")}
+      </HeaderLink>
+      <LanguageSelector />
+      <ThemeToggle />
+    </ul>
+  </nav>
+  <button id="menuToggle" class="md:hidden">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+<script type="module">
+  const $button = document.querySelector("#menuToggle");
+  const $nav = document.querySelector("nav.mobile");
+  if ($button && $nav) {
+    $button.addEventListener("click", () => {
+      const widthDevice = window.matchMedia("(max-width: 768px)");
+      widthDevice.matches ? $nav.classList.toggle("hidden") : null;
+      $button.classList.toggle("open");
+    });
+    window.addEventListener("click", (e) => {
+      const targetElement = e.target;
+      const open = $button.classList.contains("open");
+      const navHidden = !$nav.classList.contains("hidden");
+      if (!targetElement.closest($button.target) && open && navHidden) {
+        console.log("Clic fuera del elemento");
+      }
+    });
+  }
+</script>
+<style>
+  #navDesktop {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  #menuToggle {
+    left: 10px;
+    top: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  #menuToggle span {
+    position: absolute;
+    height: 5px;
+    width: 30px;
+    background: #b9fd4b;
+    border-radius: 9px;
+    opacity: 1;
+    left: 10px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #menuToggle span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  #menuToggle span:nth-child(2) {
+    top: 8px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  #menuToggle span:nth-child(3) {
+    top: 16px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  #menuToggle.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    left: 10px;
+  }
+
+  #menuToggle.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  #menuToggle.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 18px;
+    left: 10px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur bg-[#dfffaa] dark:bg-gray-800/60 ring-white/10;
+    }
+  }
+</style>
