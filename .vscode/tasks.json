@@ -2,8 +2,7 @@
   "version": "2.0.0",
   "task": [
     {
-      "type": "npm",
-      "script": "dev",
+      "script": "astro",
       "runOptions": {
         "runOn": "folderOpen"
       }

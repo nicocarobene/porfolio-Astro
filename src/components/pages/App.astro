@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Presentation from "@/components/Presentation.astro";
 import AboutMe from "@/components/AboutMe.astro";
+import Contact from "@/components/Contact.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Projects from "@/components/Projects.astro";
 import { getI18N } from "@/i18n";
@@ -13,7 +14,7 @@ const i18n = getI18N({ currentLocale });
 
 <Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION}>
   <Header />
-  <main class="max-w-[1200px] mx-auto snap-mandatory snap-y scroll-smooth">
+  <main class="max-w-[1200px] mx-auto">
     <SectionContainer>
       <Presentation />
     </SectionContainer>
@@ -22,6 +23,9 @@ const i18n = getI18N({ currentLocale });
     </SectionContainer>
     <SectionContainer id="aboutMe" class="relative place-content-stretch">
       <AboutMe />
+    </SectionContainer>
+    <SectionContainer id="contact" class="relative place-content-stretch">
+      <Contact />
     </SectionContainer>
   </main>
 </Layout>
