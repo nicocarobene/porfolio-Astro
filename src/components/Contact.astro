@@ -1,4 +1,4 @@
-<form class="max-w-lg w-full mx-auto flex flex-col gap-4">
+<form class="max-w-lg w-full mx-auto flex flex-col gap-4" id="contact-form">
   <fieldset>
     <label
       for="name"
@@ -23,6 +23,8 @@
       <input
         type="text"
         id="name"
+        name="name"
+        value="Bonnie Green"
         class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Bonnie Green"
       />
@@ -56,6 +58,8 @@
       <input
         type="email"
         id="email"
+        name="email"
+        value="Bonnie@example.com"
         class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         placeholder="Bonnie@example.com"
       />
@@ -63,25 +67,108 @@
   </fieldset>
   <label
     for="message"
-    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    class="block mt-2 text-sm font-medium text-gray-900 dark:text-white"
     >Your message</label
   >
   <textarea
     id="message"
     rows="6"
+    name="message"
     class="block resize-none p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-    placeholder="Leave a message..."></textarea>
+    placeholder="Leave a message...">Leave a message</textarea
+  >
   <button
     type="submit"
     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >Submit</button
   >
 </form>
-
+<article>
+  <div
+    id="toastSuccess"
+    class="w-full p-4 mb-4 text-sm text-green-800 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800 absolute animate-fade-up hidden"
+    role="alert"
+  >
+    <span class="font-medium">Success!</span> Your message has been sent.
+  </div>
+</article>
+<article>
+  <div
+    id="toastFail"
+    class="w-full p-4 mb-4 text-sm text-red-800 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800 absolute animate-fade-up hidden"
+    role="alert"
+  >
+    <span class="font-medium">Error!</span> Failed to send message.
+  </div>
+</article>
 <script>
-  document.querySelector("form").addEventListener("submit", (e) => {
+  const form = document.querySelector("#contact-form") as HTMLFormElement;
+  const toastFail = document.querySelector("#toastFail") as HTMLDivElement;
+
+  function validateEntryForm({
+    name,
+    email,
+    message,
+  }: {
+    name: FormDataEntryValue;
+    email: FormDataEntryValue;
+    message: FormDataEntryValue;
+  }) {
+    const nameString = name.toString().trim();
+    const emailString = email.toString().trim();
+    const messageString = message.toString().trim();
+    if (!nameString || !emailString || !messageString) {
+      return false;
+    }
+    return true;
+  }
+
+  function incorrectFields(forField?: boolean) {
+    console.log(forField);
+    if (forField) {
+      const previusContent = toastFail.innerHTML;
+      toastFail.innerHTML = "Please fill out all fields";
+      toastFail?.classList.remove("hidden");
+      setTimeout(() => {
+        toastFail?.classList.add("hidden");
+        toastFail.innerHTML = previusContent;
+      }, 3000);
+      return;
+    }
+    toastFail?.classList.remove("hidden");
+    setTimeout(() => {
+      toastFail?.classList.add("hidden");
+    }, 3000);
+  }
+
+  form?.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("hola");
-    e.target.querySelector("button").disabled = true;
+    const formData = new FormData(form);
+
+    const { name, email, message } = Object.fromEntries(formData);
+    const validateForm = validateEntryForm({ name, email, message });
+    if (!validateForm) {
+      incorrectFields(true);
+      return;
+    }
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    }).then((res) => {
+      if (!res.ok) {
+        incorrectFields();
+        throw new Error("Failed to send message");
+      }
+      const toast = document.querySelector("#toastSuccess") as HTMLDivElement;
+      toast?.classList.remove("hidden");
+      setTimeout(() => {
+        toast?.classList.add("hidden");
+      }, 3000);
+    });
+
+    form.reset();
   });
 </script>
