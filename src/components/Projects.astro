@@ -14,15 +14,28 @@ import TitleSection from "./TitleSection.astro";
   id="projects"
   class="grid auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
 >
-  <CardProject title="Extension" class="from-violet-500 to-fuchsia-500">
-    <VsCode slot="icon" class="w-6 h-6" />
+  <CardProject
+    title="Extension"
+    class="from-violet-500 to-fuchsia-500"
+    href="/extend"
+    nameTransition="extencion"
+  >
+    <VsCode transition:name="vscode" slot="icon" class="w-6 h-6" />
   </CardProject>
 
-  <CardProject title="Projects" class="from-blue-500 to-purple-500">
+  <CardProject
+    title="Projects"
+    class="from-blue-500 to-purple-500"
+    nameTransition="6565666"
+  >
     <Develop slot="icon" class="w-6 h-6" />
   </CardProject>
 
-  <CardProject title="Video Games" class="from-rose-500 to-orange-500">
+  <CardProject
+    title="Video Games"
+    class="from-rose-500 to-orange-500"
+    nameTransition="998989"
+  >
     <picture slot="icon">
       <source
         srcset="/projects/gamesMobile.avif"
