@@ -9,7 +9,7 @@ import About from "./icons/About.astro";
   </span>
   About Me
 </TitleSection>
-<article
+<!-- <article
   id="aboutMe"
   class="flex flex-col my-16 gap-5 md:gap-3 place-self-start rounded-xl bg-gray-500/55 p-3"
 >
@@ -47,4 +47,104 @@ import About from "./icons/About.astro";
     mapping (ORM) tools like
     <span class="text-[#b9fd4b] font-cascadia">Hibernate</span>.
   </p>
+</article> -->
+
+<article class="h-dvh my-12 grid grid-cols-3 gap-2">
+  <div>
+    <div class="item-animate inline-flex flex-col justify-center items-center">
+      <svg
+        class="border-white border-2 rounded-full p-2"
+        width="60"
+        height="60"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M17.754 14a2.249 2.249 0 0 1 2.25 2.249v.918a2.75 2.75 0 0 1-.513 1.599C17.945 20.929 15.42 22 12 22c-3.422 0-5.945-1.072-7.487-3.237a2.75 2.75 0 0 1-.51-1.595v-.92a2.249 2.249 0 0 1 2.249-2.25h11.501ZM12 2.004a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
+          fill="#ffffff"></path>
+      </svg>
+      <div class="flex flex-col items-center item-animated">
+        <div class="w-1 bg-white/40 h-10"></div>
+        <p
+          class="text-balance text-base opacity-80 w-60 border-2 border-white/40 rounded-md p-2"
+        >
+          Hi, I'm <span class="text-[#b9fd4b] font-cascadia">Nico</span>, a full
+          stack developer. I have a passion for creating beautiful and intuitive
+          web applications.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="item-animate inline-flex flex-col justify-center items-center">
+      <svg
+        class="border-white border-2 rounded-full p-2"
+        width="60"
+        height="60"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M17.754 14a2.249 2.249 0 0 1 2.25 2.249v.918a2.75 2.75 0 0 1-.513 1.599C17.945 20.929 15.42 22 12 22c-3.422 0-5.945-1.072-7.487-3.237a2.75 2.75 0 0 1-.51-1.595v-.92a2.249 2.249 0 0 1 2.249-2.25h11.501ZM12 2.004a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
+          fill="#ffffff"></path>
+      </svg>
+      <div class="flex flex-col items-center item-animated item2">
+        <div class="w-1 bg-white/40 h-10"></div>
+        <p
+          class="text-balance text-base opacity-80 w-60 border-2 border-white/40 rounded-md p-2"
+        >
+          Hi, I'm <span class="text-[#b9fd4b] font-cascadia">Nico</span>, a full
+          stack developer. I have a passion for creating beautiful and intuitive
+          web applications.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="item-animate inline-flex flex-col justify-center items-center">
+      <svg
+        class="border-white border-2 rounded-full p-2"
+        width="60"
+        height="60"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M17.754 14a2.249 2.249 0 0 1 2.25 2.249v.918a2.75 2.75 0 0 1-.513 1.599C17.945 20.929 15.42 22 12 22c-3.422 0-5.945-1.072-7.487-3.237a2.75 2.75 0 0 1-.51-1.595v-.92a2.249 2.249 0 0 1 2.249-2.25h11.501ZM12 2.004a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
+          fill="#ffffff"></path>
+      </svg>
+      <div class="flex flex-col items-center item-animated item3">
+        <div class="w-1 bg-white/40 h-10"></div>
+        <p
+          class="text-balance text-base opacity-80 w-60 border-2 border-white/40 rounded-md p-2"
+        >
+          Hi, I'm <span class="text-[#b9fd4b] font-cascadia">Nico</span>, a full
+          stack developer. I have a passion for creating beautiful and intuitive
+          web applications.
+        </p>
+      </div>
+    </div>
+  </div>
 </article>
+<style>
+  .item-animated {
+    opacity: 0;
+    animation-timeline: view();
+    animation-name: rotateAnimation;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-range: entry 50% cover 80%;
+    animation-delay: 2000ms;
+  }
+  .item2 {
+    animation-delay: 12000ms;
+  }
+  .item3 {
+    animation-delay: 24000ms;
+  }
+  @keyframes rotateAnimation {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
