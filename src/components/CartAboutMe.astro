@@ -1,0 +1,33 @@
+<div>
+  <div class="item-animate inline-flex flex-col justify-center items-center">
+    <slot name="icon" />
+    <div class="flex flex-col items-center item-animated">
+      <div class="w-1 bg-white/40 h-10"></div>
+      <div
+        class="rounded-xl bg-gray-500/55 text-balance text-base opacity-80 border-2 border-white/40 p-2 flex flex-col gap-2"
+      >
+        <slot name="content" />
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .item-animated {
+    opacity: 0;
+    animation-timeline: view();
+    animation-name: fade-up;
+    animation-duration: 10s;
+    animation-fill-mode: both;
+    animation-range: entry 20% cover 50%;
+  }
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
