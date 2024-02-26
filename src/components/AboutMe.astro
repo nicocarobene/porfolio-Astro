@@ -2,6 +2,11 @@
 import TitleSection from "./TitleSection.astro";
 import About from "./icons/About.astro";
 import CartAboutMe from "./CartAboutMe.astro";
+import { readdir } from "node:fs/promises";
+import path from "node:path";
+import { cwd } from "node:process";
+const folder = path.join(cwd(), "public", "icons");
+const icons = await readdir(folder);
 ---
 
 <TitleSection>
@@ -53,7 +58,9 @@ import CartAboutMe from "./CartAboutMe.astro";
 </article>
 
 <!-- about me for desktop -->
-<article class="hidden h-dvh my-12 md:grid md:grid-cols-3 md:gap-2">
+<article
+  class="hidden h-dvh mt-12 md:grid md:grid-cols-3 md:gap-2 md:gap-y-16 place-content-center items-start"
+>
   <CartAboutMe>
     <svg
       slot="icon"
@@ -67,7 +74,7 @@ import CartAboutMe from "./CartAboutMe.astro";
         d="M17.754 14a2.249 2.249 0 0 1 2.25 2.249v.918a2.75 2.75 0 0 1-.513 1.599C17.945 20.929 15.42 22 12 22c-3.422 0-5.945-1.072-7.487-3.237a2.75 2.75 0 0 1-.51-1.595v-.92a2.249 2.249 0 0 1 2.249-2.25h11.501ZM12 2.004a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
         fill="#ffffff"></path>
     </svg>
-    <div slot="content">
+    <div slot="content" class="text-center">
       <p>
         Hi there! I'm
         <span class="text-[#b9fd4b] font-cascadia">Nicolás Carobene</span>
@@ -91,11 +98,13 @@ import CartAboutMe from "./CartAboutMe.astro";
         d="m22.16 10.128-8.04 5.253a3.875 3.875 0 0 1-4.24 0L3 10.886v5.364a.75.75 0 0 1-1.5 0V10c0-.088.015-.172.043-.25a.75.75 0 0 1 .302-.881l8.064-5.17a3.875 3.875 0 0 1 4.182 0l8.064 5.17a.75.75 0 0 1 .005 1.259Z"
         fill="#ffffff"></path></svg
     >
-    <div slot="content">
-      <p>I'm dentist but I also .</p>
+    <div slot="content" class="text-center">
+      <p>I'm dentist but I also developer.</p>
       <p>
-        I discovered this passion for programming when I moved here a few years
-        ago. Since then, I haven't stopped coding and
+        My journey into programming began when I decided to create a website for
+        my dental clinic. From that moment on, I was hooked.
+      </p>
+      <p>
         <span class="text-[#b9fd4b] font-cascadia">¡I love it!</span>.
       </p>
     </div>
@@ -113,10 +122,30 @@ import CartAboutMe from "./CartAboutMe.astro";
         d="M17.754 14a2.249 2.249 0 0 1 2.25 2.249v.918a2.75 2.75 0 0 1-.513 1.599C17.945 20.929 15.42 22 12 22c-3.422 0-5.945-1.072-7.487-3.237a2.75 2.75 0 0 1-.51-1.595v-.92a2.249 2.249 0 0 1 2.249-2.25h11.501ZM12 2.004a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"
         fill="#ffffff"></path>
     </svg>
-    <p slot="content">
-      Hi, I'm <span class="text-[#b9fd4b] font-cascadia">Nico</span>, a full
-      stack developer. I have a passion for creating beautiful and intuitive web
-      applications.
+    <p slot="content" class="text-center">
+      The excitement of
+      <span class="text-[#b9fd4b] font-cascadia">
+        creating elegant solutions for complex problems
+      </span>
+      captured my imagination, and I haven't looked back since.
+    </p>
+  </CartAboutMe>
+  <CartAboutMe class="item1" row>
+    <img
+      src="/app.svg"
+      alt="icon about my projects"
+      slot="icon"
+      width="60"
+      height="60"
+      class="border-white border-2 rounded-full p-2"
+    />
+    <p slot="content" class="text-balance">
+      Beyond my technical skills, I take pride in my ability to
+      <span class="text-[#b9fd4b] font-cascadia">
+        communicate effectively and collaborate seamlessly with teams of all
+        sizes</span
+      >. My dedication to continuous learning and growth ensures that I stay
+      abreast of trends in an ever-evolving industry.
     </p>
   </CartAboutMe>
 </article>

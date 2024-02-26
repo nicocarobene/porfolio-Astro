@@ -1,0 +1,42 @@
+---
+import { readdir } from "node:fs/promises";
+import path from "node:path";
+import { cwd } from "node:process";
+const folder = path.join(cwd(), "public", "icons");
+const icons = await readdir(folder);
+---
+
+<article class="relative w-full flex flex-col gap-4 overflow-x-hidden">
+  <h3>Check my skills</h3>
+  <ul class="flex w-full overflow-x-hidden gap-5 marquee">
+    {
+      icons.map((icon) => (
+        <li class=" hover:grayscale-0 grayscale transition cursor-pointer">
+          <img
+            src={`/icons/${icon}`}
+            width="60"
+            height="60"
+            alt={`logo ${icon.split(".")[0]}`}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</article>
+
+<style>
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
