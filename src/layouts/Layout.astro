@@ -101,6 +101,31 @@ const { title, description } = Astro.props;
       .text__glowing:hover {
         text-shadow: 1px 1px 20px #65ff0f;
       }
+
+      .item-animated {
+        opacity: 0;
+        animation-timeline: view();
+        animation-name: fade-up;
+        animation-duration: 10s;
+        animation-fill-mode: both;
+        animation-range: entry 20% cover 50%;
+      }
+      .item1 {
+        animation-delay: 12000ms;
+      }
+      .item2 {
+        animation-delay: 24000ms;
+      }
+      @keyframes fade-up {
+        0% {
+          opacity: 0;
+          transform: translateY(2rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </body>
 </html>

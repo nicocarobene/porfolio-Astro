@@ -10,6 +10,8 @@ import CartAboutMe from "./CartAboutMe.astro";
   </span>
   About Me
 </TitleSection>
+
+<!-- about me for mobile -->
 <article
   id="aboutMe"
   class="md:hidden flex flex-col my-16 gap-5 md:gap-3 place-self-start rounded-xl bg-gray-500/55 p-3"
@@ -50,6 +52,7 @@ import CartAboutMe from "./CartAboutMe.astro";
   </p>
 </article>
 
+<!-- about me for desktop -->
 <article class="hidden h-dvh my-12 md:grid md:grid-cols-3 md:gap-2">
   <CartAboutMe>
     <svg
@@ -66,19 +69,14 @@ import CartAboutMe from "./CartAboutMe.astro";
     </svg>
     <div slot="content">
       <p>
-        I'm
+        Hi there! I'm
         <span class="text-[#b9fd4b] font-cascadia">Nicolás Carobene</span>
         , but my friends call me Nico 😎.
       </p>
-      <p>
-        I'm an Argentinean living in Madrid, Spain. Since I was a kid, I've been
-        <span class="text-[#b9fd4b] font-cascadia">
-          passionate about programming</span
-        >, creating video-games and web applications.
-      </p>
+      <p>I am an Argentine living in Madrid, Spain.</p>
     </div>
   </CartAboutMe>
-  <CartAboutMe>
+  <CartAboutMe class="item1">
     <svg
       slot="icon"
       class="border-white border-2 rounded-full p-2"
@@ -94,15 +92,15 @@ import CartAboutMe from "./CartAboutMe.astro";
         fill="#ffffff"></path></svg
     >
     <div slot="content">
-      <p>I'm dentist and I love to eat</p>
+      <p>I'm dentist but I also .</p>
       <p>
-        I'm a huge fan of
-        <span class="text-[#b9fd4b] font-cascadia">Astro</span>, an exciting new
-        way to create ultra-fast websites and universal components.
+        I discovered this passion for programming when I moved here a few years
+        ago. Since then, I haven't stopped coding and
+        <span class="text-[#b9fd4b] font-cascadia">¡I love it!</span>.
       </p>
     </div>
   </CartAboutMe>
-  <CartAboutMe>
+  <CartAboutMe class="item2">
     <svg
       slot="icon"
       class="border-white border-2 rounded-full p-2"
