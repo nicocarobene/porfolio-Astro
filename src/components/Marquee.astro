@@ -1,4 +1,5 @@
 ---
+import TitleSection from "./TitleSection.astro";
 import { readdir } from "node:fs/promises";
 import path from "node:path";
 import { cwd } from "node:process";
@@ -6,31 +7,50 @@ const folder = path.join(cwd(), "public", "icons");
 const icons = await readdir(folder);
 ---
 
-<article class="relative w-full flex flex-col gap-4 overflow-x-hidden">
+<article class="relative w-full flex flex-col gap-4 z-20">
   <h3>Check my skills</h3>
-  <ul class="flex w-full overflow-x-hidden gap-5 marquee">
-    {
-      icons.map((icon) => (
-        <li class=" hover:grayscale-0 grayscale transition cursor-pointer">
-          <img
-            src={`/icons/${icon}`}
-            width="60"
-            height="60"
-            alt={`logo ${icon.split(".")[0]}`}
-          />
-        </li>
-      ))
-    }
-  </ul>
+  <div class="marquee-container">
+    <ul class="flex gap-5 marquee">
+      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
+        <img
+          src={`/icons/astro.svg`}
+          class="aspect-square w-16 block"
+          alt={`logo`}
+        />
+      </li>
+      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
+        <img
+          src={`/icons/astro.svg`}
+          class="aspect-square w-16 block"
+          alt={`logo`}
+        />
+      </li>
+      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
+        <img
+          src={`/icons/astro.svg`}
+          class="aspect-square w-16 block"
+          alt={`logo`}
+        />
+      </li>
+      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
+        <img
+          src={`/icons/astro.svg`}
+          class="aspect-square w-16 block"
+          alt={`logo`}
+        />
+      </li>
+    </ul>
+  </div>
 </article>
 
 <style>
   .marquee {
-    animation: marquee 30s linear infinite;
+    /* animation: marquee 30s linear infinite; */
   }
   .marquee:hover {
     animation-play-state: paused;
   }
+
   @keyframes marquee {
     0% {
       transform: translateX(0);
@@ -40,3 +60,15 @@ const icons = await readdir(folder);
     }
   }
 </style>
+
+<!-- {
+  icons.map((icon) => (
+    <li class="hover:grayscale-0 grayscale transition cursor-pointer  flex  justify-center items-center flex-shrink w-16 max-h-full">
+      <img
+        src={`/icons/${icon}`}
+        class="aspect-square w-16 block"
+        alt={`logo ${icon.split(".")[0]}`}
+      />
+    </li>
+  ))
+} -->

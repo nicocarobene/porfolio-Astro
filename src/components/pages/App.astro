@@ -15,7 +15,7 @@ const i18n = getI18N({ currentLocale });
 
 <Layout title={i18n.SEO_TITLE_1} description={i18n.SEO_DESCRIPTION}>
   <Header />
-  <main class="max-w-[1200px] mx-auto">
+  <main class="max-w-[1200px] mx-auto overflow-hidden">
     <SectionContainer>
       <Presentation />
     </SectionContainer>
@@ -25,13 +25,13 @@ const i18n = getI18N({ currentLocale });
     <SectionContainer id="aboutMe" class="relative place-content-stretch">
       <AboutMe />
     </SectionContainer>
-    <Marquee />
     <SectionContainer
       id="contact"
       class="relative content-center place-content-stretch"
     >
       <Contact />
     </SectionContainer>
+    <Marquee />
   </main>
 </Layout>
 
