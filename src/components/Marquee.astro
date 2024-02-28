@@ -7,45 +7,38 @@ const folder = path.join(cwd(), "public", "icons");
 const icons = await readdir(folder);
 ---
 
-<article class="relative w-full flex flex-col gap-4 z-20">
+<article class="relative w-full flex flex-col gap-4 z-20 overflow-x-hidden">
   <h3>Check my skills</h3>
-  <div class="marquee-container">
-    <ul class="flex gap-5 marquee">
-      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
-        <img
-          src={`/icons/astro.svg`}
-          class="aspect-square w-16 block"
-          alt={`logo`}
-        />
-      </li>
-      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
-        <img
-          src={`/icons/astro.svg`}
-          class="aspect-square w-16 block"
-          alt={`logo`}
-        />
-      </li>
-      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
-        <img
-          src={`/icons/astro.svg`}
-          class="aspect-square w-16 block"
-          alt={`logo`}
-        />
-      </li>
-      <li class="hover:grayscale-0 grayscale transition cursor-pointer">
-        <img
-          src={`/icons/astro.svg`}
-          class="aspect-square w-16 block"
-          alt={`logo`}
-        />
-      </li>
-    </ul>
-  </div>
+  <ul class="flex gap-5 marquee flex-shrink-0 relative">
+    {
+      icons.map((icon) => (
+        <li class="hover:grayscale-0 grayscale transition cursor-pointer">
+          <img
+            src={`/icons/${icon}`}
+            class="aspect-square  min-w-16 min-h-16"
+            alt={`logo ${icon.split(".")[0]}`}
+          />
+        </li>
+      ))
+    }
+  </ul>
 </article>
-
+<script>
+  const marquee = document.querySelector(".marquee");
+  const marqueeList = marquee?.querySelectorAll("li");
+  if (marquee && marqueeList) {
+    marqueeList.forEach((item) => {
+      const clone = item.cloneNode(true);
+      marquee.appendChild(clone);
+    });
+  }
+</script>
 <style>
   .marquee {
-    /* animation: marquee 30s linear infinite; */
+    animation: marquee 20s linear infinite;
+  }
+  .marquee li {
+    width: -webkit-fill-available;
   }
   .marquee:hover {
     animation-play-state: paused;
@@ -62,13 +55,5 @@ const icons = await readdir(folder);
 </style>
 
 <!-- {
-  icons.map((icon) => (
-    <li class="hover:grayscale-0 grayscale transition cursor-pointer  flex  justify-center items-center flex-shrink w-16 max-h-full">
-      <img
-        src={`/icons/${icon}`}
-        class="aspect-square w-16 block"
-        alt={`logo ${icon.split(".")[0]}`}
-      />
-    </li>
-  ))
+
 } -->
