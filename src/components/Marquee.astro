@@ -23,7 +23,7 @@ const icons = await readdir(folder);
     }
   </ul>
 </article>
-<script>
+<script is:inline>
   const marquee = document.querySelector(".marquee");
   const marqueeList = marquee?.querySelectorAll("li");
   if (marquee && marqueeList) {
@@ -53,7 +53,3 @@ const icons = await readdir(folder);
     }
   }
 </style>
-
-<!-- {
-
-} -->
