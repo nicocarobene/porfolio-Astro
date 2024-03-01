@@ -1,6 +1,10 @@
+---
+const { notVisible } = Astro.props;
+---
+
 <h2
-  class="text-3xl text-start p-4 relative top-10 -left-5 flex gap-5 items-center"
   {...Astro.props}
+  class=`${notVisible ? "hidden" : ""}  text-3xl text-start p-4 relative top-10 -left-5 flex gap-5 items-center`
 >
   <slot />
 </h2>

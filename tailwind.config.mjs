@@ -9,6 +9,9 @@ export default {
 			fontFamily: {
 				cascadia: ['Cascadia Code', 'sans-serif']
 			},
+			textColor: {
+				'secondaryGreen': '#b9fd4b',
+			}
 		},
 	},
 	plugins: [animate],

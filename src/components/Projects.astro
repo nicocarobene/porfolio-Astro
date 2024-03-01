@@ -5,14 +5,14 @@ import Develop from "./icons/Develop.astro";
 import TitleSection from "./TitleSection.astro";
 ---
 
-<TitleSection>
+<TitleSection notVisible>
   <span class="bg-gray-500 rounded-full p-1">
     <Develop class="w-6 h-6" />
   </span>Projects
 </TitleSection>
 <article
   id="projects"
-  class="grid auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
+  class="md:hidden grid auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
 >
   <CardProject
     title="Extension"
@@ -47,3 +47,53 @@ import TitleSection from "./TitleSection.astro";
     </picture>
   </CardProject>
 </article>
+<article
+  class="m-auto hidden md:grid gap-1 place-content-center *:bg-black/50 *:backdrop-blur-sm grid-cols-[repeat(4,minmax(180px,1fr))] grid-rows-[repeat(3,minmax(180px,1fr))] py-10 *:rounded-xl"
+>
+  <div class="relative">
+    <h3 class="absolute inset-1 opacity-0 hover:opacity-100 transition">
+      hola
+    </h3>
+  </div>
+  <div></div>
+  <div
+    id="grid-extencion"
+    class="col-span-2 relative bg-gradient-to-r from-transparent to-transparent bg-cover bg-no-repeat bg-right"
+  >
+    <div
+      class="absolute inset-1 left-4 top-4 opacity-0 hover:opacity-100 transition"
+    >
+      <h3 class="flex items-center gap-3">
+        Extension
+        <VsCode transition:name="vscode" slot="icon" class="w-6 h-6" />
+      </h3>
+    </div>
+  </div>
+  <div class="row-span-2">ss</div>
+  <div
+    class="col-span-2 flex justify-center items-center gap-3 bg-gradient-to-r from-blue-500/75 to-purple-500/75 overflow-hidden cursor-pointer"
+  >
+    <div
+      class="flex items-center justify-center gap-3 hover:rotate-6 hover:scale-110 transition w-full h-full"
+    >
+      <Develop class="w-6 h-6" />
+      <h2 class="text-3xl font-cascadia">Projects</h2>
+    </div>
+  </div>
+  <div></div>
+  <div class="col-span-2"></div>
+  <div>s</div>
+</article>
+<style>
+  #grid-extencion {
+    background-image: url("/projects/Portada.webp");
+  }
+  #grid-extencion:hover {
+    background-image: linear-gradient(
+        to right,
+        rgb(0, 0, 0),
+        rgba(0, 0, 0, 0.253)
+      ),
+      url("/projects/Portada.webp");
+  }
+</style>
