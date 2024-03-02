@@ -7,8 +7,10 @@ const folder = path.join(cwd(), "public", "icons");
 const icons = await readdir(folder);
 ---
 
-//TODO fix width from animation loop in marquee
-<article class="relative w-full flex flex-col py-4 overflow-x-hidden">
+<!-- TODO fix width from animation loop in marquee -->
+<article
+  class="relative w-full max-w-screen-xl mx-auto flex flex-col py-4 overflow-x-hidden"
+>
   <ul class="flex gap-5 marquee flex-shrink-0 relative">
     {
       icons.map((icon) => (

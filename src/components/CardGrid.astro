@@ -1,0 +1,72 @@
+---
+import VsCode from "./icons/VsCode.astro";
+interface Props {
+  id?: string;
+  title: string;
+  class?: string;
+  href?: string;
+  itemStart?: boolean;
+}
+const { id, title, class: className, href, itemStart } = Astro.props;
+---
+
+<div id={id} class={`relative bg-cover bg-no-repeat ${className} `}>
+  <div
+    class="absolute inset-1 left-4 top-4 opacity-0 hover:opacity-100 transition"
+  >
+    <h3 class={`flex  ${itemStart ? "items-start" : "items-center"}  gap-3`}>
+      {title}
+      <slot name="icon" />
+    </h3>
+  </div>
+</div>
+<style>
+  #grid-extencion {
+    background-image: url("/projects/Portada.webp");
+    background-position: right;
+  }
+  #grid-extencion:hover {
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(0, 0, 0) 25%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/Portada.webp");
+  }
+  #videoGames {
+    background-image: url("/projects/videogamePortada.webp");
+    background-position: center;
+  }
+  #videoGames:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/videogamePortada.webp");
+  }
+  #test {
+    background-image: url("/projects/vscodePortada.webp");
+    background-position: left;
+  }
+  #test:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.253) 40%
+      ),
+      url("/projects/vscodePortada.webp");
+  }
+  #feriaLibro {
+    background-image: url("/projects/laferiadellibro.webp");
+    background-position: -15px 5px;
+  }
+  #feriaLibro:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.253) 40%
+      ),
+      url("/projects/laferiadellibro.webp");
+  }
+</style>
