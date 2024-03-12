@@ -7,19 +7,24 @@ interface Props {
   href?: string;
   itemStart?: boolean;
 }
-const { id, title, class: className, href, itemStart } = Astro.props;
+const { id, title, class: className, href = "#", itemStart } = Astro.props;
 ---
 
-<div id={id} class={`relative bg-cover bg-no-repeat ${className} `}>
-  <div
-    class="absolute inset-1 left-4 top-4 opacity-0 hover:opacity-100 transition"
-  >
-    <h3 class={`flex  ${itemStart ? "items-start" : "items-center"}  gap-3`}>
+<a
+  href={href}
+  rel="noopener noreferrer"
+  id={id}
+  class={`relative bg-cover bg-no-repeat ${className} hover:*:hover:opacity-100 relative`}
+>
+  <div class="absolute inset-0 opacity-0 transition w-full h-full">
+    <h3
+      class={`flex  ${itemStart ? "items-start" : "items-center"}  gap-3 px-3 py-2 `}
+    >
       {title}
       <slot name="icon" />
     </h3>
   </div>
-</div>
+</a>
 <style>
   #grid-extencion {
     background-image: url("/projects/Portada.webp");
@@ -46,27 +51,38 @@ const { id, title, class: className, href, itemStart } = Astro.props;
       url("/projects/videogamePortada.webp");
   }
   #test {
-    background-image: url("/projects/vscodePortada.webp");
-    background-position: left;
+    background-image: url("projects/bazaronline.webp");
+    /* background-image: url("/projects/vscodePortada.webp"); */
+    background-position: 47% 0%;
   }
   #test:hover {
-    background-image: linear-gradient(
-        to bottom,
-        rgb(0, 0, 0) 10%,
-        rgba(0, 0, 0, 0.253) 40%
-      ),
-      url("/projects/vscodePortada.webp");
+    background-image:
+      linear-gradient(to bottom, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0.253) 40%),
+      /* url("/projects/vscodePortada.webp"); */
+        url("projects/bazaronline.webp");
   }
   #feriaLibro {
     background-image: url("/projects/laferiadellibro.webp");
-    background-position: -15px 5px;
+    background-position: 30% 0%;
   }
   #feriaLibro:hover {
     background-image: linear-gradient(
         to bottom,
-        rgb(0, 0, 0) 10%,
-        rgba(0, 0, 0, 0.253) 40%
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
       ),
       url("/projects/laferiadellibro.webp");
+  }
+  #shpping-card {
+    background-image: url("/projects/shoppingcart.webp");
+    background-position: 0% 0%;
+  }
+  #shpping-card:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/shoppingcart.webp");
   }
 </style>
