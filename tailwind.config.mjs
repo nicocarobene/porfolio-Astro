@@ -14,5 +14,11 @@ export default {
 			}
 		},
 	},
-	plugins: [animate],
+	plugins: [animate,
+		function ({
+			addVariant
+		}) {
+			addVariant("any-hover", "@media (any-hover: hover) { &:hover }")
+			addVariant("mobile", "@media (any-hover: none) { & }")
+		}],
 }
