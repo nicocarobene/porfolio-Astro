@@ -1,5 +1,7 @@
 ---
+import Link from "@/components/Link.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
 import VsCode from "@/components/icons/VsCode.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
@@ -17,39 +19,50 @@ import Layout from "@/layouts/Layout.astro";
     <h1 class="text-white text-3xl" transition:name="extencion">Extension</h1>
   </header>
   <main class="max-w-[1200px] mx-auto">
-    <SectionContainer class="relative place-content-start mt-5">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
       <article
         id="projects"
-        class="flex animate-fade-up flex-col backdrop-blur-sm p-1 bg-gray-600 items-start min-w-full rounded-xl"
+        class="flex flex-col animate-fade-up backdrop-blur-sm p-1 bg-gray-600 items-start min-w-full rounded-xl"
       >
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="main-video"
-          preload="metadata"
-          class="video object-cover object-left-top aspect-[52/48] w-80 place-self-start rounded-xl"
-        >
-          <source
+        <div class="overflow-hidden w-full">
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            id="main-video"
+            preload="metadata"
+            class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
             src="/media/quickSelector.mp4"
-            type="video/mp4"
-            class="cp-v"
-          />
-        </video>
+          >
+          </video>
+        </div>
         <div class="w-full px-2">
-          <div class="flex items-center justify-between w-full">
+          <div class="flex items-center w-full gap-7 justify-start">
             <h2 class="text-3xl font-cascadia my-3 animate-fade text-[#b9fd4b]">
               Quick Selector
             </h2>
             <img
               id="avatar"
               src="/quickSelector.webp"
-              class="w-10 object-cover object-size aspect-square object-center h-10 animate-fade rounded-full"
+              class="size-12 object-cover object-size aspect-square object-center animate-fade rounded-full"
               alt="avatar extension quick selector"
             />
+            <div
+              class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+            >
+              <Link
+                href="https://marketplace.visualstudio.com/items?itemName=NicolasCarobene.quickselector"
+              >
+                <VsCode class:list={["size-7"]} />
+              </Link>
+              <span class="opacity-65"> | </span>
+              <Link href="https://github.com/nicocarobene/quick-selector">
+                <Github class:list={["size-7", "text-white"]} />
+              </Link>
+            </div>
           </div>
-          <p class="text-balance text-base opacity-85 py-2 pb-4">
+          <p class="text-balance text-base py-2 pb-4 opacity-85">
             Quick Selector is a <span class="text-[#fffb52]"
               >Visual Studio Code extension</span
             > that provides tools to ease your programming workflow. Simply select
