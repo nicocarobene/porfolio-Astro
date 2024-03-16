@@ -6,6 +6,7 @@ import Github from "./icons/Github.astro";
 import Linkedin from "./icons/Linkedin.astro";
 import Mail from "./icons/Mail.astro";
 import Develop from "./icons/Develop.astro";
+import Link from "./Link.astro";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
@@ -30,34 +31,21 @@ const i18n = getI18N({ currentLocale });
       </div>
       <ul class="flex items-center gap-3">
         <li>
-          <a
-            href="https://github.com/nicocarobene"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block any-hover:scale-125 any-hover:opacity-70 motion-safe:transition motion-reduce:any-hover:scale-100"
-          >
+          <Link href="https://github.com/nicocarobene">
             <Github class="w-8 h-8" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
+          <Link
             href="https://www.linkedin.com/in/nicol%C3%A1s-carobene-26617120a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block any-hover:scale-125 any-hover:opacity-70 motion-safe:transition motion-reduce:any-hover:scale-100"
           >
             <Linkedin class="w-8 h-8" />
-          </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="mailto:nicolascarobene3@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block any-hover:scale-125 any-hover:opacity-70 motion-safe:transition motion-reduce:any-hover:scale-100"
-          >
+          <Link href="mailto:nicolascarobene3@gmail.com">
             <Mail class="w-10 h-10" />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
