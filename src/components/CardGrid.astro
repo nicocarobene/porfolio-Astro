@@ -1,5 +1,4 @@
 ---
-import VsCode from "./icons/VsCode.astro";
 interface Props {
   id?: string;
   title: string;
@@ -7,7 +6,13 @@ interface Props {
   href?: string;
   itemStart?: boolean;
 }
-const { id, title, class: className, href = "#", itemStart } = Astro.props;
+const {
+  id,
+  title,
+  class: className,
+  href = "#",
+  itemStart = false,
+} = Astro.props;
 ---
 
 <a
@@ -18,7 +23,7 @@ const { id, title, class: className, href = "#", itemStart } = Astro.props;
 >
   <div class="absolute inset-0 opacity-0 transition w-full h-full">
     <h3
-      class={`flex  ${itemStart ? "items-start" : "items-center"}  gap-3 px-3 py-2 `}
+      class={`flex  ${itemStart ? "items-start" : "items-center"}  gap-3 px-3 py-2  capitalize`}
     >
       {title}
       <slot name="icon" />
@@ -50,16 +55,54 @@ const { id, title, class: className, href = "#", itemStart } = Astro.props;
       ),
       url("/projects/videogamePortada.webp");
   }
+  #wordle {
+    background-image: url("/projects/wordle.webp");
+    background-position: center;
+  }
+  #wordle:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/wordle.webp");
+  }
+  #minesweesper {
+    background-image: url("/projects/mines.webp");
+    background-position: center;
+  }
+  #minesweesper:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/mines.webp");
+  }
+  #simonSay {
+    background-image: url("/projects/simonSay.webp");
+    background-position: center;
+  }
+  #simonSay:hover {
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 20%,
+        rgba(0, 0, 0, 0.253) 50%
+      ),
+      url("/projects/simonSay.webp");
+  }
   #test {
-    background-image: url("projects/bazaronline.webp");
+    background-image: url("/projects/bazaronline.webp");
     /* background-image: url("/projects/vscodePortada.webp"); */
     background-position: 47% 0%;
   }
   #test:hover {
-    background-image:
-      linear-gradient(to bottom, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0.253) 40%),
-      /* url("/projects/vscodePortada.webp"); */
-        url("projects/bazaronline.webp");
+    background-image: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0) 10%,
+        rgba(0, 0, 0, 0.253) 40%
+      ),
+      url("/projects/bazaronline.webp");
   }
   #feriaLibro {
     background-image: url("/projects/laferiadellibro.webp");
