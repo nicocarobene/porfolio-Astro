@@ -81,6 +81,7 @@ const { title, description } = Astro.props;
         background: rgba(255, 255, 255, 0.5);
       }
       html {
+        scrollbar-gutter: stable;
         font-family: "Onest", system-ui, sans-serif;
         background: #13151a;
         background-size: 224px;
@@ -105,9 +106,9 @@ const { title, description } = Astro.props;
       .item-animated {
         opacity: 0;
         animation-timeline: view();
+        animation-fill-mode: both;
         animation-name: fade-up;
         animation-duration: 10s;
-        animation-fill-mode: both;
         animation-range: entry 20% cover 50%;
       }
       .item1 {
