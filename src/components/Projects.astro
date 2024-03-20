@@ -56,10 +56,11 @@ import Marquee from "./Marquee.astro";
   <CardGrid
     title="wordle"
     id="wordle"
+    href="/wordle"
     itemStart
     class:list={"from-blue-500 to-purple-500"}
   >
-    <picture slot="icon">
+    <picture slot="icon" transition:name="wordle">
       <source
         srcset="/projects/gamesMobile.avif"
         type="image/avif"
@@ -79,7 +80,7 @@ import Marquee from "./Marquee.astro";
   >
     <VsCode transition:name="vscode" slot="icon" class="w-6 h-6" />
   </CardGrid>
-  <CardGrid id="test" title="Skills Test" class="row-span-2">
+  <CardGrid id="test" title="Skills Test" class="row-span-2" href="/test">
     <Develop class="w-8 h-8 bg-sky-600 p-1 rounded-full" slot="icon" />
   </CardGrid>
 
