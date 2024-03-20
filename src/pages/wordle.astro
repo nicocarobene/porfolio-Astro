@@ -1,0 +1,110 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+---
+
+<Layout
+  title="Wordle | Nicodev | Porfolio"
+  description="Extension for Visual Studio Code to enhance your development speed and streamline your routine tasks."
+>
+  <header class="w-full flex px-4 pt-5 gap-2 items-center">
+    <span
+      class="bg-gradient-to-r from-rose-500 to-orange-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <picture class="place-items-start" transition:name="wordle">
+        <source
+          srcset="/projects/gamesMobile.avif"
+          type="image/avif"
+          media="(max-width: 767px)"
+        />
+        <img src="/projects/games.png" alt="video games" class="size-7" />
+      </picture>
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">Wordle</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Wordle" image="/projects/wordle.webp">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/wordle.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://wordle-one-alpha.vercel.app/">
+            <LinkIcon class:list={["size-7", "text-white"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/wordle">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          Wordle is a <span class="text-[#fffb52]"> simple</span>
+          and
+          <span class="text-[#fffb52]"> entertaining </span>
+          word game that
+          <span class="text-[#fffb52]"> challenges </span>
+          your ability to
+          <span class="text-[#fffb52]"> guess </span>
+          the secret word in just six attempts. Test your
+          <span class="text-[#fffb52]"> vocabulary and deductive skills </span>
+          as you try to decipher the
+          <span class="text-[#fffb52]"> hidden word </span>
+          before
+          <span class="text-[#fffb52]"> time runs out. </span>
+          Have fun playing and improving your
+          <span class="text-[#fffb52]"> language skills </span>
+          with Wordle!
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
