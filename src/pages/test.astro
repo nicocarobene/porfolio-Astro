@@ -1,0 +1,82 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import VsCode from "@/components/icons/VsCode.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+---
+
+<Layout
+  title="Test Skills | Nicodev | Porfolio"
+  description="tecnical test skills for software development"
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <VsCode class="w-6 h-6" transition:name="vscode" />
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">Extension</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Quick Selector" image="/quickSelector.webp">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/quickSelector.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link
+            href="https://marketplace.visualstudio.com/items?itemName=NicolasCarobene.quickselector"
+          >
+            <VsCode class:list={["size-7"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/quick-selector">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          Quick Selector is a <span class="text-[#fffb52]"
+            >Visual Studio Code extension</span
+          > that provides tools to ease your programming workflow. Simply select
+          the code for which you want to <span class="text-[#fffb52]"
+            >generate CSS selectors in your HTML file.</span
+          >
+          Then, access the class creator using Ctrl + Shift + P, type 'Generate CSS',
+          and voila! You'll have <span class="text-[#fffb52]">
+            all your CSS selectors in the clipboard</span
+          >
+          ready to paste into your .css file
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
