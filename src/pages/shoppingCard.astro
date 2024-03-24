@@ -1,0 +1,102 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+import Develop from "@/components/icons/Develop.astro";
+---
+
+<Layout
+  title="Shopping Card | Nicodev | Porfolio"
+  description="Compra todo eso que deseas al mejor precio en linea, desde la comodidad de tu casa."
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-blue-600 to-gray-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <Develop class="w-6 h-6 text-white" transition:name="develop" />
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">Extension</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Shopping Cart" image="/projects/shoppingcart.webp">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/shoppingCart.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://e-comers-theta.vercel.app/">
+            <LinkIcon class:list={["size-7"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/e-comers">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          ¡Descubre 'The Shopping Cart', la aplicación perfecta para comprar en
+          línea! Diseñada para superar una prueba técnica, esta aplicación
+          ofrece una interfaz
+          <span class="text-[#fffb52]"> intuitiva </span>
+          y
+          <span class="text-[#fffb52]"> atractiva </span>
+          , haciendo que tu experiencia de compra sea fácil y emocionante. Con funcionalidades
+          de
+          <span class="text-[#fffb52]"> estado global </span>
+          y opciones de
+          <span class="text-[#fffb52]"> filtrado dinámico </span>
+          por categorías y precios, encontrar y adquirir tus productos deseados nunca
+          ha sido tan sencillo. Eleva tu experiencia de compra en línea con 'The
+          Shopping Cart': donde la comodidad se encuentra con la elegancia.
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
