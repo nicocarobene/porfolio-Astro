@@ -11,47 +11,52 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<article class="flex flex-col justify-center items-center z-10">
+<article class="flex flex-col justify-center items-center z-10 lg:gap-5">
   <div class="flex gap-4 items-center justify-center">
-    <picture class="w-1/3 md:w-1/3 rounded-full">
+    <picture class="w-1/3 lg:w-2/5 rounded-full">
       <source srcset="/avatarMobile.avif" media="(max-width: 767px)" />
       <img src="/avatar.jpg" alt="image avatar nicodev" class="rounded-full" />
     </picture>
     <div class="flex flex-col gap-3">
-      <div class="flex flex-col">
-        <h2 class="text-2xl md:text-4xl flex items-center gap-2">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-2xl md:text-4xl lg:text-6xl flex items-center gap-2">
           Nico
           <span class="bg-gray-500/55 rounded-full p-1">
-            <Develop class="w-5 h-5" />
+            <Develop class="size-5 lg:size-8" />
           </span>
         </h2>
-        <h3 class="text-sm md:text-lg text-gray-300 font-cascadia">
+        <h3 class="text-sm md:text-lg lg:text-2xl text-gray-300 font-cascadia">
           Full Stack Developer
         </h3>
       </div>
-      <ul class="flex items-center gap-3">
+      <div
+        class="h-[2px] w-full rounded-l-[30%] border-t-0"
+        style="background: radial-gradient(circle, rgba(255,255,255,1) 30%, transparent 90%);"
+      >
+      </div>
+      <ul class="flex items-center justify-evenly gap-3">
         <li>
           <Link href="https://github.com/nicocarobene">
-            <Github class="w-8 h-8" />
+            <Github class="size-8 lg:size-10" />
           </Link>
         </li>
         <li>
           <Link
             href="https://www.linkedin.com/in/nicol%C3%A1s-carobene-26617120a/"
           >
-            <Linkedin class="w-8 h-8" />
+            <Linkedin class="size-8 lg:size-10" />
           </Link>
         </li>
         <li>
           <Link href="mailto:nicolascarobene3@gmail.com">
-            <Mail class="w-10 h-10" />
+            <Mail class="size-10 lg:size-12" />
           </Link>
         </li>
       </ul>
     </div>
   </div>
   <h1
-    class="text-4xl text-center md:text-5xl my-5 text-[#b9fd4b] font-cascadia"
+    class="text-4xl lg:text-6xl text-center md:text-5xl my-5 text-[#b9fd4b] font-cascadia"
   >
     Hi Human 👽
   </h1>
