@@ -12,5 +12,11 @@
   "HEADER_EXPERIENCE": "Expiriencia",
   "HEADER_PROJECT": "Projectos",
   "HEADER_ABOUTME": "Sobre mi",
-  "HEADER_CONTACT": "Contacto"
+  "HEADER_CONTACT": "Contacto",
+  "PROJECTS": {
+    "EXTENSION": {
+      "TITLE": "Extension",
+      "DESCRIPTION": "Extension de visual studio code para mejorar tus tiempos de desarrollo y facilitar tu trabajo rutinario"
+    }
+  }
 }
