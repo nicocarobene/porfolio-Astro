@@ -20,8 +20,9 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <header
-  class="fixed top-2 z-20 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-2 z-20 flex items-start justify-start md:justify-center w-full mx-auto mt-2"
 >
+  <!-- Menu desktop -->
   <nav
     id="navDesktop"
     class="z-30 hidden md:flex px-3 gap-3 text-sm font-medium rounded-full justify-center items-center"
@@ -38,9 +39,11 @@ const translatePath = useTranslatedPath(lang);
     <HeaderLink class="text__glowing" href="#contact">
       {t("nav.contact")}
     </HeaderLink>
-    <LanguageSelector />
     <ThemeToggle />
+    <LanguageSelector />
   </nav>
+
+  <!-- Menu mobile -->
   <nav
     class="md:hidden hidden animate-fade-left mobile backdrop-blur-sm h-[dvh-3.5rem] absolute top-0 right-[calc(100vw-11.5rem)]"
   >
@@ -54,11 +57,14 @@ const translatePath = useTranslatedPath(lang);
       <HeaderLink class="text__glowing hover:font-bold" href="#">
         {t("nav.contact")}
       </HeaderLink>
-      <LanguageSelector />
       <ThemeToggle />
+      <LanguageSelector />
     </ul>
   </nav>
-  <button id="menuToggle" class="md:hidden">
+  <button
+    id="menuToggle"
+    class="md:hidden flex flex-col gap-1 select-none ml-2 w-8 h-8 *:rounded-lg *:w-7 *:h-1 *:bg-[#b9fd4b]"
+  >
     <span></span>
     <span></span>
     <span></span>
@@ -91,25 +97,12 @@ const translatePath = useTranslatedPath(lang);
   }
 
   #menuToggle {
-    left: 10px;
-    top: 20px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
   }
   #menuToggle span {
-    position: absolute;
-    height: 5px;
-    width: 30px;
-    background: #b9fd4b;
-    border-radius: 9px;
-    opacity: 1;
-    left: 10px;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    position: relative;
     -webkit-transition: 0.25s ease-in-out;
     -moz-transition: 0.25s ease-in-out;
     -o-transition: 0.25s ease-in-out;
@@ -125,7 +118,6 @@ const translatePath = useTranslatedPath(lang);
   }
 
   #menuToggle span:nth-child(2) {
-    top: 8px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
@@ -133,7 +125,6 @@ const translatePath = useTranslatedPath(lang);
   }
 
   #menuToggle span:nth-child(3) {
-    top: 16px;
     -webkit-transform-origin: left center;
     -moz-transform-origin: left center;
     -o-transform-origin: left center;
@@ -144,9 +135,7 @@ const translatePath = useTranslatedPath(lang);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: -3px;
-    left: 10px;
+    @apply rotate-45;
   }
 
   #menuToggle.open span:nth-child(2) {
@@ -158,9 +147,7 @@ const translatePath = useTranslatedPath(lang);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 18px;
-    left: 10px;
+    @apply mt-1 -rotate-45;
   }
 
   @keyframes nav-shadown {
