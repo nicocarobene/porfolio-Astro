@@ -5,6 +5,8 @@ import Github from "@/components/icons/Github.astro";
 import VsCode from "@/components/icons/VsCode.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
+import Develop from "@/components/icons/Develop.astro";
+import LinkIcon from "@/components/icons/Link.astro";
 ---
 
 <Layout
@@ -13,15 +15,21 @@ import CardSeccion from "@/components/CardSeccion.astro";
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
-      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full p-1 flex items-center w-16 justify-center"
+      class="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full p-1 flex items-center w-16 justify-center"
     >
-      <VsCode class="w-6 h-6" transition:name="vscode" />
+      <Develop
+        transition:name="testSkills"
+        class="w-8 h-8 bg-sky-600 p-1 rounded-full text-white"
+        slot="icon"
+      />
     </span>
-    <h1 class="text-white text-3xl" transition:name="extencion">Extension</h1>
+    <h1 class="text-white text-3xl" transition:name="extencion">
+      Bazar Online
+    </h1>
   </header>
   <main class="max-w-[1200px] mx-auto">
     <SectionContainer class="relative place-content-start justify-center mt-5">
-      <CardSeccion title="Quick Selector" image="/quickSelector.webp">
+      <CardSeccion title="Bazar Online" image="/projects/bazarIcon.avif">
         <video
           slot="background"
           autoplay
@@ -31,20 +39,18 @@ import CardSeccion from "@/components/CardSeccion.astro";
           id="main-video"
           preload="metadata"
           class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
-          src="/media/quickSelector.mp4"
+          src="/media/bazar-online.mp4"
         >
         </video>
         <div
           slot="links"
           class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
         >
-          <Link
-            href="https://marketplace.visualstudio.com/items?itemName=NicolasCarobene.quickselector"
-          >
-            <VsCode class:list={["size-7"]} />
+          <Link href="https://bazar-online-ten.vercel.app/">
+            <LinkIcon class:list={["size-7"]} />
           </Link>
           <span class="opacity-65"> | </span>
-          <Link href="https://github.com/nicocarobene/quick-selector">
+          <Link href="https://github.com/nicocarobene/bazarOnline">
             <Github class:list={["size-7", "text-white"]} />
           </Link>
         </div>
@@ -52,17 +58,29 @@ import CardSeccion from "@/components/CardSeccion.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          Quick Selector is a <span class="text-[#fffb52]"
-            >Visual Studio Code extension</span
-          > that provides tools to ease your programming workflow. Simply select
-          the code for which you want to <span class="text-[#fffb52]"
-            >generate CSS selectors in your HTML file.</span
-          >
-          Then, access the class creator using Ctrl + Shift + P, type 'Generate CSS',
-          and voila! You'll have <span class="text-[#fffb52]">
-            all your CSS selectors in the clipboard</span
-          >
-          ready to paste into your .css file
+          This project is a
+          <span class="text-[#fffb52]"> technical test </span>
+          focused on creating a
+          <span class="text-[#fffb52]"> simple and fast web application </span>
+          for user convenience. To achieve this goal, we have chosen to use two frameworks
+          that will help us ensure
+          <span class="text-[#fffb52]"> speed </span>
+          and ease of use without compromising the
+          <span class="text-[#fffb52]"> security </span>
+          and
+          <span class="text-[#fffb52]"> robustness </span>
+          of the application. To do this, we have chosen Astro for the static parts
+          of the application, allowing us to achieve more efficient loading. To do
+          this, we have chosen
+          <span class="text-[#fffb52]">Astro</span>
+          for the static parts of the application, allowing us to achieve more efficient
+          loading, and
+          <span class="text-[#fffb52]"> Preact </span>
+          for implementing
+          <span class="text-[#fffb52]"> Hooks </span>
+          and other development tools from the
+          <span class="text-[#fffb52]"> React </span>
+          library, but in a more compressed and lightweight form.
         </p>
       </CardSeccion>
     </SectionContainer>
