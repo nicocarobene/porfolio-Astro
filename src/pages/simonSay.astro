@@ -1,0 +1,109 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+---
+
+<Layout
+  title="Simon Say | Nicodev | Porfolio"
+  description="Simon Say es una aplicacion donde podras poner a pruebas tus habilidades de memorizacion de patrones de colores..."
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <picture slot="icon" transition:name="simonSay">
+        <source
+          srcset="/projects/gamesMobile.avif"
+          type="image/avif"
+          media="(max-width: 767px)"
+        />
+        <img src="/projects/games.png" alt="video games" class="w-6 h-6" />
+      </picture>
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">Games</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Simon Say" image="/projects/simonSay.webp">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/simonSay.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://simonsay.vercel.app/">
+            <LinkIcon class:list={["size-7"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/simonsay">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          ¡Bienvenido a 'Simon Say'! Sumérgete en la nostalgia con este clásico
+          juego de memoria y destreza. Diseñado para desafiar tus habilidades
+          cognitivas, 'Simon Say' ofrece una experiencia de juego
+          <span class="text-[#fffb52]"> adictiva</span>
+          y
+          <span class="text-[#fffb52]">divertida</span>
+          . Pon a prueba tu capacidad de recordar secuencias de luces y sonidos,
+          desbloquea niveles cada vez más desafiantes y compite por la puntuación
+          más alta. Con una interfaz
+          <span class="text-[#fffb52]">colorida</span>
+          y
+          <span class="text-[#fffb52]"> envolvente</span>
+          , 'Simon Say' te transporta de vuelta a la era de los juegos de mesa clásicos,
+          ¡pero esta vez en la palma de tu mano! Prepárate para poner a prueba tu
+          mente y superar tus límites con 'Simon Say'
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
