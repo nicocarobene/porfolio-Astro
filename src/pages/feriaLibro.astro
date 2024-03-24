@@ -1,0 +1,96 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+---
+
+<Layout
+  title="La Feria del Libro | Nicodev | Porfolio"
+  description="Una aplicacion web donde podras encontrar todos los libros y comics que mas te gusten para poder leerlos en el formato que mas te guste y cuando quieras..."
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-blue-500 to-green-700 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <span class="text-xl" transition:name="feriaLibro">📚</span>
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">
+      La Feria del Libro
+    </h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion
+        title="Feria del Libro"
+        image="/projects/laferiadellibro.webp"
+      >
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/feriaLibro.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://github.com/nicocarobene/LaFeriaDelLibro">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          Discover your next favorite read with our book application! Our app
+          provides you with an
+          <span class="text-[#fffb52]"> intuitive </span>
+          and
+          <span class="text-[#fffb52]"> exciting </span>
+          browsing experience, designed to meet all your reading needs. With a
+          <span class="text-[#fffb52]"> wide selection </span>
+          of books from various genres and authors, you'll find exactly what you're
+          looking for.
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
