@@ -1,0 +1,109 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+---
+
+<Layout
+  title="Minesweeper | Nicodev | Porfolio"
+  description="Juego de buscaminas para mejorar tus habilidades de ..."
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <picture slot="icon" transition:name="minesweeper">
+        <source
+          srcset="/projects/gamesMobile.avif"
+          type="image/avif"
+          media="(max-width: 767px)"
+        />
+        <img src="/projects/games.png" alt="video games" class="w-6 h-6" />
+      </picture>
+    </span>
+    <h1 class="text-white text-3xl">Minesweeper</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Quick Selector" image="/projects/minesicon.png">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-center aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/mines.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://mines-weeper-delta.vercel.app/">
+            <LinkIcon class:list={["size-7"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/minesWeeper">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          Welcome to our Minesweeper game project, where we aim to deliver an
+          immersive gaming experience that challenges players of all skill
+          levels. Leveraging
+          <span class="text-[#fffb52]"> LitElement </span>
+          and
+          <span class="text-[#fffb52]"> Web Components </span>
+          , alongside HTML5 and JavaScript, our game ensures
+          <span class="text-[#fffb52]"> cross-platform compatibility </span>
+          for seamless gameplay. Featuring
+          <span class="text-[#fffb52]">
+            intuitive controls, and captivating graphics,
+          </span>
+          players can enjoy hours of entertainment while testing their strategic
+          thinking skills. Join us in the thrilling adventure of
+          <span class="text-[#fffb52]"> minesweeping! </span>
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
