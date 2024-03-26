@@ -81,6 +81,7 @@ const { title, description } = Astro.props;
         background: rgba(255, 255, 255, 0.5);
       }
       html {
+        color-scheme: dark light;
         scrollbar-gutter: stable;
         font-family: "Onest", system-ui, sans-serif;
         background: #13151a;
@@ -94,13 +95,6 @@ const { title, description } = Astro.props;
           rgba(23, 23, 59, 1) 40%,
           rgba(71, 53, 107, 1) 100%
         );
-      }
-      .text__glowing {
-        transition: text-shadow 0.3s ease;
-      }
-
-      .text__glowing:hover {
-        text-shadow: 1px 1px 20px #65ff0f;
       }
 
       .item-animated {
