@@ -1,10 +1,9 @@
 ---
-import { getI18N } from "@/i18n";
 import ThemeToggle from "./ThemeToggle.astro";
 import HeaderLink from "./HeaderLink.astro";
 import LanguageSelector from "./LanguageSelector.astro";
-import MenuIcon from "./icons/MenuIcon.astro";
 
+import { getI18N } from "@/i18n";
 import {
   getLangFromUrl,
   useTranslations,
@@ -20,80 +19,68 @@ const translatePath = useTranslatedPath(lang);
 ---
 
 <header
-  class="fixed top-2 z-20 flex items-start justify-start md:justify-center w-full mx-auto mt-2"
+  class="fixed top-2 left-2 z-20 flex items-start justify-start md:justify-center w-full mx-auto mt-2"
 >
-  <!-- Menu desktop -->
-  <nav
-    id="navDesktop"
-    class="z-30 hidden md:flex px-3 gap-3 text-sm font-medium rounded-full justify-center items-center"
+  <button
+    id="menuToggle"
+    class="mt-1 md:hidden md:invisible flex flex-col gap-1 select-none ml-2 size-8 *:rounded-lg *:w-7 *:h-1 *:bg-[#b9fd4b]"
   >
-    <HeaderLink class="text__glowing" href="#">
-      {t("nav.expirience")}
-    </HeaderLink>
-    <HeaderLink class="text__glowing" href="#projects">
-      {t("nav.projects")}
-    </HeaderLink>
-    <HeaderLink class="text__glowing" href="#aboutMe">
-      {t("nav.aboutMe")}
-    </HeaderLink>
-    <HeaderLink class="text__glowing" href="#contact">
-      {t("nav.contact")}
-    </HeaderLink>
-    <ThemeToggle />
-    <LanguageSelector />
-  </nav>
-
-  <!-- Menu mobile -->
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <nav
-    class="md:hidden hidden animate-fade-left mobile backdrop-blur-sm h-[dvh-3.5rem] absolute top-0 right-[calc(100vw-11.5rem)]"
+    id="navigator"
+    class="dark:text-gray-200 z-30 hidden md:flex md:px-3 text-sm font-medium rounded-md -mt-1 ml-1 md:ml-0 md:mt-0 md:rounded-full px-3 md:bg-transparent py-2 md:py-0 backdrop-blur-sm"
   >
-    <ul class="flex flex-col gap-4 px-2 dark:text-gray-200">
-      <HeaderLink class="text__glowing hover:font-bold" href="#projects">
+    <ul
+      class="flex md:flex flex-col md:flex-row gap-2 md:gap-3 justify-center items-start md:items-center"
+    >
+      <HeaderLink class="text__glowing" href="#">
+        {t("nav.expirience")}
+      </HeaderLink>
+      <HeaderLink class="text__glowing" href="#projects">
         {t("nav.projects")}
       </HeaderLink>
-      <HeaderLink class="text__glowing hover:font-bold" href="#aboutMe">
+      <HeaderLink class="text__glowing" href="#aboutMe">
         {t("nav.aboutMe")}
       </HeaderLink>
-      <HeaderLink class="text__glowing hover:font-bold" href="#">
+      <HeaderLink class="text__glowing" href="#contact">
         {t("nav.contact")}
       </HeaderLink>
       <ThemeToggle />
       <LanguageSelector />
     </ul>
   </nav>
-  <button
-    id="menuToggle"
-    class="md:hidden flex flex-col gap-1 select-none ml-2 w-8 h-8 *:rounded-lg *:w-7 *:h-1 *:bg-[#b9fd4b]"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </header>
-<script type="module">
-  const $button = document.querySelector("#menuToggle");
-  const $nav = document.querySelector("nav.mobile");
+
+<script is:inline>
+  const $button = document.getElementById("menuToggle");
+  const $nav = document.getElementById("navigator");
+  console.log();
+  let navOpen = false;
   if ($button && $nav) {
     $button.addEventListener("click", () => {
       const widthDevice = window.matchMedia("(max-width: 768px)");
       widthDevice.matches ? $nav.classList.toggle("hidden") : null;
       $button.classList.toggle("open");
     });
-    window.addEventListener("click", (e) => {
-      const targetElement = e.target;
-      const open = $button.classList.contains("open");
-      const navHidden = !$nav.classList.contains("hidden");
-      if (!targetElement.closest($button.target) && open && navHidden) {
-        console.log("Clic fuera del elemento");
-      }
-    });
   }
 </script>
+
 <style>
-  #navDesktop {
+  .text__glowing {
+    transition: text-shadow 0.3s ease;
+  }
+
+  .text__glowing:hover {
+    text-shadow: 1px 1px 20px #65ff0f;
+  }
+
+  #navigator {
     animation: nav-shadown linear both;
     animation-timeline: scroll();
-    animation-range: 0 300px;
+    animation-range: 0 500px;
   }
 
   #menuToggle {
@@ -152,7 +139,7 @@ const translatePath = useTranslatedPath(lang);
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-[#dfffaa] dark:bg-gray-800/60 ring-white/10;
+      @apply shadow-lg ring-1 bg-gray-900 border-gray-500/20  ring-white/10;
     }
   }
 </style>
