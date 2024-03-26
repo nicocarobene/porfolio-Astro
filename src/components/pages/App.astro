@@ -18,7 +18,10 @@ const i18n = getI18N({ currentLocale });
     <SectionContainer>
       <Presentation />
     </SectionContainer>
-    <SectionContainer id="projects" class="relative place-content-stretch">
+    <SectionContainer
+      id="projects"
+      class="relative place-content-stretch lg:max-w-7xl"
+    >
       <Projects />
     </SectionContainer>
     <SectionContainer id="aboutMe" class="relative place-content-stretch">
@@ -34,10 +37,11 @@ const i18n = getI18N({ currentLocale });
   <footer class="text-center text-white py-5">
     <!-- <Marquee /> -->
     <h4>
-      Made width ❤️ by <a
+      {i18n.FOOTER.TITLE}
+      <a
         href="https://github.com/nicocarobene"
         target="_blank"
-        rel="noopener noreferrer">Nico</a
+        rel="noopener noreferrer">{i18n.FOOTER.TITLE_LINK}</a
       >
     </h4>
   </footer>
@@ -47,7 +51,7 @@ const i18n = getI18N({ currentLocale });
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+
     max-width: calc(100% - 2rem);
     color: white;
     font-size: 20px;
