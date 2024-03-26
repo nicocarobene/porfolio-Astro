@@ -5,19 +5,24 @@ import Develop from "./icons/Develop.astro";
 import TitleSection from "./TitleSection.astro";
 import CardGrid from "./CardGrid.astro";
 import Github from "./icons/Github.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <TitleSection notVisible>
   <span class="bg-gray-500 rounded-full p-1">
     <Develop class="w-6 h-6" />
-  </span>Projects
+  </span>{i18n.PROJECTS.TITLE}
 </TitleSection>
+<!-- MOBILE -->
 <article
   id="projects"
-  class="md:hidden grid auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
+  class="md:hidden grid auto-rows-[140px] lg:auto-rows-[140px] grid-cols-1 md:grid-cols-3 backdrop-blur-sm bg-black/40 min-w-full rounded-xl"
 >
   <CardProject
-    title="Extension"
+    title={i18n.PROJECTS.MOBILE.EXTENSION.TITLE}
     class="from-violet-500 to-fuchsia-500"
     href="/extend"
     nameTransition="extencion"
@@ -26,7 +31,7 @@ import Github from "./icons/Github.astro";
   </CardProject>
 
   <CardProject
-    title="Projects"
+    title={i18n.PROJECTS.MOBILE.PROJECTS.TITLE}
     class="from-blue-500 to-purple-500"
     nameTransition="projects"
     href="/projects"
@@ -35,7 +40,7 @@ import Github from "./icons/Github.astro";
   </CardProject>
 
   <CardProject
-    title="Video Games"
+    title={i18n.PROJECTS.MOBILE.VIDEOGAME.TITLE}
     class="from-rose-500 to-orange-500"
     nameTransition="998989"
   >
@@ -49,11 +54,13 @@ import Github from "./icons/Github.astro";
     </picture>
   </CardProject>
 </article>
+
+<!-- DESKTOP -->
 <article
-  class="m-auto hidden md:grid gap-4 place-content-center *:bg-black/50 *:backdrop-blur-sm grid-cols-[repeat(4,minmax(180px,1fr))] grid-rows-[repeat(3,minmax(180px,1fr))] py-10 *:rounded-xl"
+  class="relative m-auto hidden md:grid gap-4 place-content-center *:bg-black/50 *:backdrop-blur-sm grid-cols-[repeat(4,minmax(180px,1fr))] grid-rows-[repeat(3,minmax(180px,1fr))] lg:grid-cols-[repeat(4,minmax(230px,1fr))] lg:grid-rows-[repeat(3,minmax(230px,1fr))] py-10 *:rounded-xl"
 >
   <CardGrid
-    title="wordle"
+    title={i18n.PROJECTS.DESKTOP.WORDLE.TITLE}
     id="wordle"
     href="/wordle"
     itemStart
@@ -68,18 +75,27 @@ import Github from "./icons/Github.astro";
       <img src="/projects/games.png" alt="video games" class="w-6 h-6" />
     </picture>
   </CardGrid>
-  <CardGrid title="Feria libro" id="feriaLibro" href="/feriaLibro">
+  <CardGrid
+    title={i18n.PROJECTS.DESKTOP.FERIALIBRO.TITLE}
+    id="feriaLibro"
+    href="/feriaLibro"
+  >
     <span slot="icon" transition:name="feriaLibro">📚</span>
   </CardGrid>
   <CardGrid
     id="grid-extencion"
-    title="Extension"
+    title={i18n.PROJECTS.DESKTOP.EXTENSION.TITLE}
     class="col-span-2"
     href="/extend"
   >
     <VsCode transition:name="vscode" slot="icon" class="w-6 h-6" />
   </CardGrid>
-  <CardGrid id="test" title="Skills Test" class="row-span-2" href="/test">
+  <CardGrid
+    id="test"
+    title={i18n.PROJECTS.DESKTOP.SKILLSTEST.TITLE}
+    class="row-span-2"
+    href="/test"
+  >
     <Develop
       class="w-8 h-8 bg-sky-600 p-1 rounded-full"
       slot="icon"
@@ -97,24 +113,31 @@ import Github from "./icons/Github.astro";
       class="text-white flex items-center justify-center gap-3 hover:rotate-6 hover:scale-110 transition w-full h-full"
     >
       <Github class="w-10 h-10 text-white" />
-      <h2 class="text-3xl font-cascadia">Projects</h2>
+      <h2 class="text-3xl font-cascadia">
+        {i18n.PROJECTS.DESKTOP.PROJECTS.TITLE}
+      </h2>
     </div>
   </a>
   <CardGrid
-    title="minesweesper"
+    title={i18n.PROJECTS.DESKTOP.MINESWEEPER.TITLE}
     id="minesweesper"
     itemStart
     href="/minesweeper"
   />
   <CardGrid
     id="shpping-card"
-    title="Shopping Card"
+    title={i18n.PROJECTS.DESKTOP.SHOPPINGCARD.TITLE}
     class="col-span-2"
     href="/shoppingCard"
   >
     <Develop class="w-8 h-8 bg-sky-600 p-1 rounded-full" slot="icon" />
   </CardGrid>
-  <CardGrid title="SimonSay" id="simonSay" itemStart href="/simonSay">
+  <CardGrid
+    title={i18n.PROJECTS.DESKTOP.SIMONSAY.TITLE}
+    id="simonSay"
+    itemStart
+    href="/simonSay"
+  >
     <picture slot="icon" transition:name="simonSay">
       <source
         srcset="/projects/gamesMobile.avif"

@@ -2,13 +2,17 @@
 import TitleSection from "./TitleSection.astro";
 import About from "./icons/About.astro";
 import CartAboutMe from "./CartAboutMe.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <TitleSection>
   <span>
     <About />
   </span>
-  About Me
+  {i18n.ABOUTME.TITLE}
 </TitleSection>
 
 <!-- about me for mobile -->
@@ -17,38 +21,65 @@ import CartAboutMe from "./CartAboutMe.astro";
   class="md:hidden flex flex-col my-16 gap-5 md:gap-3 place-self-start rounded-xl bg-gray-500/55 p-3"
 >
   <p class="text-balance text-base opacity-80 max-w-3/4">
-    I love
+    {i18n.ABOUTME.MOBILE.FIRST.PARRAFO_1_BEGIN}
     <span class="text-[#b9fd4b] font-cascadia">
-      building modern and scalable web applications,
-    </span> that provide an excellent user experience.
+      {i18n.ABOUTME.MOBILE.FIRST.SPAN_1}
+    </span>, {i18n.ABOUTME.MOBILE.FIRST.PARRAFO_1_END}
   </p>
   <p class="text-balance text-base opacity-80 max-w-3/4">
-    On the frontend, I work with technologies such as
-    <span class="text-[#b9fd4b] font-cascadia">TypeScript</span> and
-    <span class="text-[#b9fd4b] font-cascadia">JavaScript</span>, using
-    frameworks like
-    <span class="text-[#b9fd4b] font-cascadia">Next.js</span>,
-    <span class="text-[#b9fd4b] font-cascadia">Angular</span> and
-    <span class="text-[#b9fd4b] font-cascadia">Web Components</span>.
-    Additionally, I have experience with
-    <span class="text-[#b9fd4b] font-cascadia">Astro</span>, an exciting new way
-    to create ultra-fast websites and universal components.
+    {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_BEGIN}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_1}</span
+    >
+    {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_CONECTOR}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_2}</span
+    >
+    {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_MIDDLE}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_3}</span
+    >,
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_4}</span
+    >
+    {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_CONECTOR}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_5}</span
+    >{i18n.ABOUTME.MOBILE.SECOND.PARRAFO_END}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.SECOND.SPAN_6}</span
+    >
+    {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_END2}
   </p>
 
   <p class="text-balance text-base opacity-80 max-w-3/4">
-    On the backend, I have worked with
-    <span class="text-[#b9fd4b] font-cascadia">Node.js</span>
-    and
-    <span class="text-[#b9fd4b] font-cascadia">Java</span>, using frameworks
-    like
-    <span class="text-[#b9fd4b] font-cascadia">Express</span>,
-    <span class="text-[#b9fd4b] font-cascadia">Spring Boot</span> to build APIs.
-    I also specialize in designing and developing databases using
-    <span class="text-[#b9fd4b] font-cascadia">SQL</span> and <span
-      class="text-[#b9fd4b] font-cascadia">NoSQL</span
-    >, such as MySQL and MongoDB, and I am familiar with object-relational
-    mapping (ORM) tools like
-    <span class="text-[#b9fd4b] font-cascadia">Hibernate</span>.
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_BEGIN}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_1}</span
+    >
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_CONECTOR}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_2}</span
+    >
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_1_END}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_3}</span
+    >,
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_4}</span
+    >
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_2_END}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_5}</span
+    >
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_CONECTOR}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_6}</span
+    >
+    {i18n.ABOUTME.MOBILE.THREE.PARRAFO_3_END}
+    <span class="text-[#b9fd4b] font-cascadia"
+      >{i18n.ABOUTME.MOBILE.THREE.SPAN_7}
+    </span>.
   </p>
 </article>
 
