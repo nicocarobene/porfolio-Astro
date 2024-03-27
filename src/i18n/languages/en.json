@@ -73,8 +73,8 @@
     "MOBILE": {
       "FIRST": {
         "PARRAFO_1_BEGIN": "I love",
-        "SPAN_1": "building modern and scalable web applications",
-        "PARRAFO_1_END": ", that provide an excellent user experience."
+        "SPAN_1": "building modern and scalable web applications,",
+        "PARRAFO_1_END": "that provide an excellent user experience."
       },
       "SECOND": {
         "PARRAFO_BEGIN": "On the frontend, I work with technologies such as",
@@ -106,24 +106,96 @@
     },
     "DESKTOP": {
       "FIRST": {
+        "PARRAFO_1": "Hi there! I'm",
+        "SPAN": "Nicolás Carobene",
+        "PARRAFO_2": ", but my friends call me Nico 😎.",
+        "PARRAFO_3": "I am an Argentine living in Madrid, Spain."
+      },
+      "SECOND": {
         "PARRAFO_1": "I'm dentist but I also developer.",
         "PARRAFO_2": "My journey into programming began when I decided to create a website for my dental clinic. From that moment on, I was hooked.",
         "SPAN": "I love it!"
       },
-      "SECOND": {
+      "THREE": {
         "PARRAFO_BEGIN": "The excitement of",
         "SPAN": "creating elegant solutions for complex problems",
         "PARRAFO_END": "captured my imagination, and I haven't looked back since."
       },
-      "THREE": {
+      "FOURTH": {
         "PARRAFO_BEGIN": "Beyond my technical skills, I take pride in my ability to",
         "SPAN": "communicate effectively and collaborate seamlessly with teams of all sizes",
         "PARRAFO_END": "My dedication to continuous learning and growth ensures that I stay abreast of trends in an ever-evolving industry."
       }
     }
   },
+  "CONTACT": {
+    "NAME_FIELD": {
+      "LABEL": "Name",
+      "PLACEHOLDER": "Bonnie Green"
+    },
+    "EMAIL_FIELD": {
+      "LABEL": "Email",
+      "PLACEHOLDER": "Bonnie@example.com"
+    },
+    "TEXTAREA_FIELD": {
+      "LABEL": "Your message",
+      "PLACEHOLDER": "Hey Nico, I'm interested in your projects"
+    },
+    "BUTTON_SUBMIT": "Submit",
+    "ALERT_SUCCESS": {
+      "SPAN": "Success!",
+      "PARRAFO": "Your message has been sent"
+    },
+    "ALERT_ERROR": {
+      "SPAN": "Error!",
+      "PARRAFO": "Failed to send message."
+    }
+  },
   "FOOTER": {
     "TITLE": "Made width ❤️ by",
     "TITLE_LINK": "Nicodev"
+  },
+  "PAGES": {
+    "EXTENSION": {
+      "TITLE": "Extension",
+      "SEO_DESCRIPTION": "Extension for Visual Studio Code to enhance your development speed and streamline your routine tasks.",
+      "PARRAFO_BEGIN": "Quick Selector is a",
+      "SPAN_1": " Visual Studio Code extension",
+      "PARRAFO_MIDDLE": "that provides tools to ease your programming workflow. Simply select the code for which you want to",
+      "SPAN_2": " generate CSS selectors in your HTML file.",
+      "PARRAFO_END": "Then, access the class creator using Ctrl + Shift + P, type 'Generate CSS', and voila! You'll have",
+      "SPAN_3": " all your CSS selectors in the clipboard",
+      "PARRAFO_END_2": "ready to paste into your .css file."
+    },
+    "WORDLE": {
+      "SEO_DESCRIPTION": "Extension for Visual Studio Code to enhance your development speed and streamline your routine tasks.",
+      "PARRAFO": "Wordle is a",
+      "SPAN_1": " simple",
+      "PARRAFO_MIDDLE_1": "and",
+      "SPAN_2": " entertaining",
+      "PARRAFO_MIDDLE_2": "word game that",
+      "SPAN_3": " challenges",
+      "PARRAFO_MIDDLE_3": "your ability to",
+      "SPAN_4": " guess",
+      "PARRAFO_MIDDLE_4": "the secret word in just six attempts. Test your",
+      "SPAN_5": " vocabulary and deductive skills",
+      "PARRAFO_MIDDLE_5": "as you try to decipher the",
+      "SPAN_6": " hidden word",
+      "PARRAFO_END": "before",
+      "SPAN_7": " time runs out.",
+      "PARRAFO_END_2": "Have fun playing and improving your",
+      "SPAN_8": " language skills",
+      "PARRAFO_END_3": "with Wordle!"
+    },
+    "LAFERIADELLIBRO": {
+      "SEO_DESCRIPTION": "A web application where you can find all your favorite books and comics to read them in the format you prefer, whenever you want..",
+      "PARRAFO_BEGIN": "Discover your next favorite read with our book application! Our app provides you with an",
+      "SPAN_1": " intuitive",
+      "PARRAFO_MIDDLE_1": "and",
+      "SPAN_2": " exciting",
+      "PARRAFO_MIDDLE_2": "browsing experience, designed to meet all your reading needs. With a",
+      "SPAN_3": " wide selection",
+      "PARRAFO_END": "of books from various genres and authors, you'll find exactly what you're looking for."
+    }
   }
 }
