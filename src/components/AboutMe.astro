@@ -24,7 +24,7 @@ const i18n = getI18N({ currentLocale });
     {i18n.ABOUTME.MOBILE.FIRST.PARRAFO_1_BEGIN}
     <span class="text-[#b9fd4b] font-cascadia">
       {i18n.ABOUTME.MOBILE.FIRST.SPAN_1}
-    </span>, {i18n.ABOUTME.MOBILE.FIRST.PARRAFO_1_END}
+    </span>{i18n.ABOUTME.MOBILE.FIRST.PARRAFO_1_END}
   </p>
   <p class="text-balance text-base opacity-80 max-w-3/4">
     {i18n.ABOUTME.MOBILE.SECOND.PARRAFO_BEGIN}
@@ -102,11 +102,13 @@ const i18n = getI18N({ currentLocale });
     </svg>
     <div slot="content" class="text-center">
       <p>
-        Hi there! I'm
-        <span class="text-[#b9fd4b] font-cascadia">Nicolás Carobene</span>
-        , but my friends call me Nico 😎.
+        {i18n.ABOUTME.DESKTOP.FIRST.PARRAFO_1}
+        <span class="text-[#b9fd4b] font-cascadia"
+          >{i18n.ABOUTME.DESKTOP.FIRST.SPAN}</span
+        >
+        {i18n.ABOUTME.DESKTOP.FIRST.PARRAFO_2}
       </p>
-      <p>I am an Argentine living in Madrid, Spain.</p>
+      <p>{i18n.ABOUTME.DESKTOP.FIRST.PARRAFO_2}</p>
     </div>
   </CartAboutMe>
   <CartAboutMe class="item1">
@@ -125,13 +127,14 @@ const i18n = getI18N({ currentLocale });
         fill="#ffffff"></path></svg
     >
     <div slot="content" class="text-center">
-      <p>I'm dentist but I also developer.</p>
+      <p>{i18n.ABOUTME.DESKTOP.SECOND.PARRAFO_1}</p>
       <p>
-        My journey into programming began when I decided to create a website for
-        my dental clinic. From that moment on, I was hooked.
+        {i18n.ABOUTME.DESKTOP.SECOND.PARRAFO_2}
       </p>
       <p>
-        <span class="text-[#b9fd4b] font-cascadia">¡I love it!</span>.
+        <span class="text-[#b9fd4b] font-cascadia"
+          >{i18n.ABOUTME.DESKTOP.SECOND.SPAN}</span
+        >.
       </p>
     </div>
   </CartAboutMe>
@@ -149,11 +152,11 @@ const i18n = getI18N({ currentLocale });
         fill="#ffffff"></path>
     </svg>
     <p slot="content" class="text-center">
-      The excitement of
+      {i18n.ABOUTME.DESKTOP.THREE.PARRAFO_BEGIN}
       <span class="text-[#b9fd4b] font-cascadia">
-        creating elegant solutions for complex problems
+        {i18n.ABOUTME.DESKTOP.THREE.SPAN}
       </span>
-      captured my imagination, and I haven't looked back since.
+      {i18n.ABOUTME.DESKTOP.THREE.PARRAFO_END}
     </p>
   </CartAboutMe>
   <CartAboutMe class="item1" row>
@@ -166,12 +169,10 @@ const i18n = getI18N({ currentLocale });
       class="border-white border-2 rounded-full p-2"
     />
     <p slot="content" class="text-balance">
-      Beyond my technical skills, I take pride in my ability to
+      {i18n.ABOUTME.DESKTOP.FOURTH.PARRAFO_BEGIN}
       <span class="text-[#b9fd4b] font-cascadia">
-        communicate effectively and collaborate seamlessly with teams of all
-        sizes</span
-      >. My dedication to continuous learning and growth ensures that I stay
-      abreast of trends in an ever-evolving industry.
+        {i18n.ABOUTME.DESKTOP.FOURTH.SPAN}
+      </span>. {i18n.ABOUTME.DESKTOP.FOURTH.PARRAFO_END}
     </p>
   </CartAboutMe>
 </article>

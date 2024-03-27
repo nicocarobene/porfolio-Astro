@@ -4,11 +4,14 @@ import SectionContainer from "@/components/SectionContainer.astro";
 import Github from "@/components/icons/Github.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="La Feria del Libro | Nicodev | Porfolio"
-  description="Una aplicacion web donde podras encontrar todos los libros y comics que mas te gusten para poder leerlos en el formato que mas te guste y cuando quieras..."
+  description={i18n.PAGES.LAFERIADELLIBRO.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
@@ -50,15 +53,19 @@ import CardSeccion from "@/components/CardSeccion.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          Discover your next favorite read with our book application! Our app
-          provides you with an
-          <span class="text-[#fffb52]"> intuitive </span>
-          and
-          <span class="text-[#fffb52]"> exciting </span>
-          browsing experience, designed to meet all your reading needs. With a
-          <span class="text-[#fffb52]"> wide selection </span>
-          of books from various genres and authors, you'll find exactly what you're
-          looking for.
+          {i18n.PAGES.LAFERIADELLIBRO.PARRAFO_BEGIN}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.LAFERIADELLIBRO.SPAN_1}
+          </span>
+          {i18n.PAGES.LAFERIADELLIBRO.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.LAFERIADELLIBRO.SPAN_2}
+          </span>
+          {i18n.PAGES.LAFERIADELLIBRO.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.LAFERIADELLIBRO.SPAN_3}
+          </span>
+          {i18n.PAGES.LAFERIADELLIBRO.PARRAFO_END}
         </p>
       </CardSeccion>
     </SectionContainer>

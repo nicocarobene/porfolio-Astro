@@ -5,11 +5,14 @@ import Github from "@/components/icons/Github.astro";
 import VsCode from "@/components/icons/VsCode.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="Extension | Nicodev | Porfolio"
-  description="Extension de visual studio code para mejorar tus tiempos de desarrollo y facilitar tu trabajo rutinario"
+  description={i18n.PAGES.EXTENSION.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
@@ -17,7 +20,9 @@ import CardSeccion from "@/components/CardSeccion.astro";
     >
       <VsCode class="w-6 h-6" transition:name="vscode" />
     </span>
-    <h1 class="text-white text-3xl" transition:name="extencion">Extension</h1>
+    <h1 class="text-white text-3xl" transition:name="extencion">
+      {i18n.PAGES.EXTENSION.TITLE}
+    </h1>
   </header>
   <main class="max-w-[1200px] mx-auto">
     <SectionContainer class="relative place-content-start justify-center mt-5">
@@ -52,17 +57,14 @@ import CardSeccion from "@/components/CardSeccion.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          Quick Selector is a <span class="text-[#fffb52]"
-            >Visual Studio Code extension</span
-          > that provides tools to ease your programming workflow. Simply select
-          the code for which you want to <span class="text-[#fffb52]"
-            >generate CSS selectors in your HTML file.</span
+          {i18n.PAGES.EXTENSION.PARRAFO_BEGIN}<span class="text-[#fffb52]"
+            >{i18n.PAGES.EXTENSION.SPAN_1}</span
           >
-          Then, access the class creator using Ctrl + Shift + P, type 'Generate CSS',
-          and voila! You'll have <span class="text-[#fffb52]">
-            all your CSS selectors in the clipboard</span
-          >
-          ready to paste into your .css file
+          {i18n.PAGES.EXTENSION.MIDDLE}
+          <span class="text-[#fffb52]">{i18n.PAGES.EXTENSION.SPAN_2}</span>
+          {i18n.PAGES.EXTENSION.PARRAFO_END}
+          <span class="text-[#fffb52]"> {i18n.PAGES.EXTENSION.SPAN_3}</span>
+          {i18n.PAGES.EXTENSION.PARRAFO_END_2}
         </p>
       </CardSeccion>
     </SectionContainer>

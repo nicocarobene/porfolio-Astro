@@ -5,11 +5,15 @@ import Github from "@/components/icons/Github.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
 import LinkIcon from "@/components/icons/Link.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="Wordle | Nicodev | Porfolio"
-  description="Extension for Visual Studio Code to enhance your development speed and streamline your routine tasks."
+  description={i18n.PAGES.WORDLE.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2 items-center">
     <span
@@ -57,22 +61,24 @@ import LinkIcon from "@/components/icons/Link.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          Wordle is a <span class="text-[#fffb52]"> simple</span>
-          and
-          <span class="text-[#fffb52]"> entertaining </span>
-          word game that
-          <span class="text-[#fffb52]"> challenges </span>
-          your ability to
-          <span class="text-[#fffb52]"> guess </span>
-          the secret word in just six attempts. Test your
-          <span class="text-[#fffb52]"> vocabulary and deductive skills </span>
-          as you try to decipher the
-          <span class="text-[#fffb52]"> hidden word </span>
-          before
-          <span class="text-[#fffb52]"> time runs out. </span>
-          Have fun playing and improving your
-          <span class="text-[#fffb52]"> language skills </span>
-          with Wordle!
+          {i18n.PAGES.WORDLE.PARRAFO}<span class="text-[#fffb52]"
+            >{i18n.PAGES.WORDLE.SPAN_1}</span
+          >
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">{i18n.PAGES.WORDLE.SPAN_2}</span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_3} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_3}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_4} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_4}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_5} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_5}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_6} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END}
+          <span class="text-[#fffb52]">{i18n.PAGES.WORDLE.SPAN_7} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_8} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END_3}
         </p>
       </CardSeccion>
     </SectionContainer>
