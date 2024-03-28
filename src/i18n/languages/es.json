@@ -1,22 +1,260 @@
 {
-  "SEO_TITLE_1": "Porfolio - Nicodev 💻",
-  "SEO_DESCRIPTION": "Bienvenido a mi portafolio de programador full stack. Explora mi perfil, proyectos, y experiencia. Siempre puedes contactarme para colaborar o para una oportunidad de trabajo.",
+  "SEO_TITLE_1": "Portafolio - Nicodev 💻",
+  "SEO_DESCRIPTION": "Bienvenido a mi portafolio profesional de desarrollador full stack. Explora mi perfil, proyectos y experiencia. No dudes en contactarme para colaboraciones y oportunidades de desarrollo web.",
   "SEO": {
-    "ERROR_404_TITLE": "Pagina no encontrada 😭",
-    "ERROR_404_DESCRIPTION": "Lo sentimos, no pudimos encontrar la pagina que estabas buscando.",
+    "ERROR_404_TITLE": "Página no encontrada 😭",
+    "ERROR_404_DESCRIPTION": "Lo siento, no pudimos encontrar la página que estabas buscando.",
     "ERROR_404_BACK": "Volver al inicio"
   },
   "HEADER": {
     "LOGO": "Volver al inicio"
   },
-  "HEADER_EXPERIENCE": "Expiriencia",
-  "HEADER_PROJECT": "Projectos",
-  "HEADER_ABOUTME": "Sobre mi",
+  "HEADER_EXPERIENCE": "Experiencia",
+  "HEADER_PROJECT": "Proyectos",
+  "HEADER_ABOUTME": "Sobre mí",
   "HEADER_CONTACT": "Contacto",
+  "PRESENTATION_SECCION": {
+    "TITLE": "Hola humano"
+  },
   "PROJECTS": {
+    "TITLE": "Proyectos",
+    "MOBILE": {
+      "EXTENSION": {
+        "TITLE": "Extensión",
+        "DESCRIPTION": "Extensión de Visual Studio Code para mejorar tu productividad y simplificar tu trabajo diario"
+      },
+      "PROJECTS": {
+        "TITLE": "Proyectos",
+        "DESCRIPTION": "Lista de proyectos en los que he trabajado"
+      },
+      "VIDEOGAME": {
+        "TITLE": "Videojuegos",
+        "DESCRIPTION": "Videojuego creado con HTML, CSS y JavaScript"
+      }
+    },
+    "DESKTOP": {
+      "WORDLE": {
+        "TITLE": "Wordle",
+        "DESCRIPTION": "Juego de Wordle creado con HTML, CSS y JavaScript"
+      },
+      "FERIALIBRO": {
+        "TITLE": "Feria del libro",
+        "DESCRIPTION": "Feria del libro creada con HTML, CSS y JavaScript"
+      },
+      "EXTENSION": {
+        "TITLE": "Extensión",
+        "DESCRIPTION": "Extensión de Visual Studio Code para mejorar tu productividad y simplificar tu trabajo diario"
+      },
+      "SKILLSTEST": {
+        "TITLE": "Prueba de habilidades",
+        "DESCRIPTION": "Prueba de habilidades creada con HTML, CSS y JavaScript"
+      },
+      "PROJECTS": {
+        "TITLE": "Proyectos",
+        "DESCRIPTION": "Lista de proyectos en los que he trabajado"
+      },
+      "MINESWEEPER": {
+        "TITLE": "Buscaminas",
+        "DESCRIPTION": "Juego de Buscaminas creado con HTML, CSS y JavaScript"
+      },
+      "SHOPPINGCARD": {
+        "TITLE": "Carrito de compras",
+        "DESCRIPTION": "Carrito de compras creado con HTML, CSS y JavaScript"
+      },
+      "SIMONSAY": {
+        "TITLE": "Simon Say",
+        "DESCRIPTION": "Juego de Simon Say creado con HTML, CSS y JavaScript"
+      }
+    }
+  },
+  "ABOUTME": {
+    "TITLE": "Sobre mí",
+    "DESCRIPTION": "Un poco sobre mí",
+    "MOBILE": {
+      "FIRST": {
+        "PARRAFO_1_BEGIN": "Me encanta",
+        "SPAN_1": "construir aplicaciones web modernas y escalables,",
+        "PARRAFO_1_END": "que brinden una excelente experiencia de usuario."
+      },
+      "SECOND": {
+        "PARRAFO_BEGIN": "En el frontend, trabajo con tecnologías como",
+        "SPAN_1": "TypeScript",
+        "PARRAFO_CONECTOR": "y",
+        "SPAN_2": "JavaScript",
+        "PARRAFO_MIDDLE": ", utilizando frameworks como",
+        "SPAN_3": "Next.js",
+        "SPAN_4": "Angular",
+        "SPAN_5": "Web Components",
+        "PARRAFO_END": ". Además, tengo experiencia con",
+        "SPAN_6": "Astro",
+        "PARRAFO_END2": ", una emocionante forma nueva de crear sitios web ultrarrápidos y componentes universales."
+      },
+      "THREE": {
+        "PARRAFO_BEGIN": "En el backend, he trabajado con",
+        "SPAN_1": "Node.js",
+        "PARRAFO_CONECTOR": "y",
+        "SPAN_2": "Java",
+        "PARRAFO_1_END": ", utilizando frameworks como",
+        "SPAN_3": "Express",
+        "SPAN_4": "Spring Boot",
+        "PARRAFO_2_END": "para construir APIs. También me especializo en diseñar y desarrollar bases de datos utilizando",
+        "SPAN_5": "SQL",
+        "SPAN_6": "NoSQL",
+        "PARRAFO_3_END": ", como MySQL y MongoDB, y estoy familiarizado con herramientas de mapeo objeto-relacional (ORM) como",
+        "SPAN_7": "Hibernate"
+      }
+    },
+    "DESKTOP": {
+      "FIRST": {
+        "PARRAFO_1": "¡Hola! Soy",
+        "SPAN": "Nicolás Carobene",
+        "PARRAFO_2": "pero mis amigos me llaman Nico 😎.",
+        "PARRAFO_3": "Soy argentino viviendo en Madrid, España."
+      },
+      "SECOND": {
+        "PARRAFO_1": "Soy dentista pero también soy desarrollador.",
+        "PARRAFO_2": "Mi viaje hacia la programación comenzó cuando decidí crear un sitio web para mi clínica dental. Desde ese momento, quedé enganchado.",
+        "SPAN": "¡Me encanta!"
+      },
+      "THREE": {
+        "PARRAFO_BEGIN": "La emoción de",
+        "SPAN": "crear soluciones elegantes para problemas complejos",
+        "PARRAFO_END": "capturó mi imaginación, y desde entonces no he mirado atrás."
+      },
+      "FOURTH": {
+        "PARRAFO_BEGIN": "Más allá de mis habilidades técnicas, me enorgullezco de mi habilidad para",
+        "SPAN": "comunicarme de manera efectiva y colaborar sin problemas con equipos de todos los tamaños",
+        "PARRAFO_END": "Mi dedicación al aprendizaje continuo y al crecimiento asegura que me mantenga al tanto de las tendencias en una industria en constante evolución."
+      }
+    }
+  },
+  "CONTACT": {
+    "NAME_FIELD": {
+      "LABEL": "Nombre",
+      "PLACEHOLDER": "Bonnie Green"
+    },
+    "EMAIL_FIELD": {
+      "LABEL": "Correo electrónico",
+      "PLACEHOLDER": "Bonnie@example.com"
+    },
+    "TEXTAREA_FIELD": {
+      "LABEL": "Tu mensaje",
+      "PLACEHOLDER": "Hola Nico, estoy interesado en tus proyectos"
+    },
+    "BUTTON_SUBMIT": "Enviar",
+    "ALERT_SUCCESS": {
+      "SPAN": "¡Éxito!",
+      "PARRAFO": "Tu mensaje ha sido enviado"
+    },
+    "ALERT_ERROR": {
+      "SPAN": "Error",
+      "PARRAFO": "No se pudo enviar el mensaje."
+    }
+  },
+  "FOOTER": {
+    "TITLE": "Hecho con ❤️ por",
+    "TITLE_LINK": "Nicodev"
+  },
+  "PAGES": {
     "EXTENSION": {
-      "TITLE": "Extension",
-      "DESCRIPTION": "Extension de visual studio code para mejorar tus tiempos de desarrollo y facilitar tu trabajo rutinario"
+      "TITLE": "Extensión",
+      "SEO_DESCRIPTION": "Extensión para Visual Studio Code para mejorar tu velocidad de desarrollo y simplificar tus tareas rutinarias.",
+      "PARRAFO_BEGIN": "Quick Selector es una",
+      "SPAN_1": " extensión de Visual Studio Code",
+      "PARRAFO_MIDDLE": "que proporciona herramientas para facilitar tu flujo de trabajo de programación. Simplemente selecciona el código para el cual deseas",
+      "SPAN_2": " generar selectores CSS en tu archivo HTML.",
+      "PARRAFO_END": "Luego, accede al creador de clases usando Ctrl + Shift + P, escribe 'Generar CSS', ¡y listo! Tendrás",
+      "SPAN_3": " todos tus selectores CSS en el portapapeles",
+      "PARRAFO_END_2": "listos para pegar en tu archivo .css."
+    },
+    "WORDLE": {
+      "SEO_DESCRIPTION": "Extensión para Visual Studio Code para mejorar tu velocidad de desarrollo y simplificar tus tareas rutinarias.",
+      "PARRAFO": "Wordle es un",
+      "SPAN_1": " juego de palabras",
+      "PARRAFO_MIDDLE_1": "simple y",
+      "SPAN_2": " entretenido",
+      "PARRAFO_MIDDLE_2": "que",
+      "SPAN_3": " desafía",
+      "PARRAFO_MIDDLE_3": "tu habilidad para",
+      "SPAN_4": " adivinar",
+      "PARRAFO_MIDDLE_4": "la palabra secreta en solo seis intentos. Pon a prueba tu",
+      "SPAN_5": " vocabulario y habilidades deductivas",
+      "PARRAFO_MIDDLE_5": "mientras intentas descifrar la",
+      "SPAN_6": " palabra oculta",
+      "PARRAFO_END": "antes de que",
+      "SPAN_7": " se acabe el tiempo.",
+      "PARRAFO_END_2": "¡Diviértete jugando y mejorando tus",
+      "SPAN_8": " habilidades lingüísticas",
+      "PARRAFO_END_3": "con Wordle!"
+    },
+    "LAFERIADELLIBRO": {
+      "SEO_DESCRIPTION": "Una aplicación web donde puedes encontrar todos tus libros y cómics favoritos para leerlos en el formato que prefieras, cuando quieras.",
+      "PARRAFO_BEGIN": "¡Descubre tu próxima lectura favorita con nuestra aplicación de libros! Nuestra aplicación te ofrece una experiencia de navegación",
+      "SPAN_1": " intuitiva",
+      "PARRAFO_MIDDLE_1": "y",
+      "SPAN_2": " emocionante",
+      "PARRAFO_MIDDLE_2": ", diseñada para satisfacer todas tus necesidades de lectura. Con una",
+      "SPAN_3": " amplia selección",
+      "PARRAFO_END": "de libros de diversos géneros y autores, encontrarás exactamente lo que buscas."
+    },
+    "TEST": {
+      "SEO_DESCRIPTION": "Prueba técnica de habilidades para el desarrollo de software",
+      "PARRAFO_BEGIN": "Este proyecto es una",
+      "SPAN_1": " prueba técnica",
+      "PARRAFO_MIDDLE_1": "centrada en la creación de una",
+      "SPAN_2": " aplicación web simple y rápida",
+      "PARRAFO_MIDDLE_2": "para la conveniencia del usuario. Para lograr este objetivo, hemos elegido utilizar dos frameworks que nos ayudarán a garantizar",
+      "SPAN_3": " velocidad",
+      "PARRAFO_MIDDLE_3": "y facilidad de uso sin comprometer la",
+      "SPAN_4": " seguridad",
+      "PARRAFO_MIDDLE_4": "y",
+      "SPAN_5": " robustez",
+      "PARRAFO_MIDDLE_5": "de la aplicación. Para hacer esto, hemos elegido Astro para las partes estáticas de la aplicación, lo que nos permite lograr una carga más eficiente. Para hacer esto, hemos elegido",
+      "SPAN_6": " Astro",
+      "PARRAFO_MIDDLE_6": "para las partes estáticas de la aplicación, lo que nos permite lograr una carga más eficiente, y",
+      "SPAN_7": " Preact",
+      "PARRAFO_MIDDLE_7": "para implementar",
+      "SPAN_8": " Hooks",
+      "PARRAFO_MIDDLE_8": "y otras herramientas de desarrollo de la",
+      "SPAN_9": " biblioteca React",
+      "PARRAFO_END": "library, pero en una forma más comprimida y ligera."
+    },
+    "SHOPPING_CARD": {
+      "SEO_DESCRIPTION": "Compra todo lo que quieras al mejor precio en línea, desde la comodidad de tu hogar.",
+      "PARRAFO_BEGIN": "¡Descubre 'The Shopping Cart', la aplicación perfecta para compras en línea! Diseñada para pasar una prueba técnica, esta aplicación ofrece una interfaz",
+      "SPAN_1": " intuitiva",
+      "PARRAFO_MIDDLE_1": "y",
+      "SPAN_2": " atractiva",
+      "PARRAFO_MIDDLE_2": ", haciendo que tu experiencia de compra sea fácil y emocionante. Con características de",
+      "SPAN_3": " estado global",
+      "PARRAFO_MIDDLE_3": "y opciones para",
+      "SPAN_4": " filtrado dinámico",
+      "PARRAFO_END": "por categorías y precios, encontrar y comprar tus productos deseados nunca ha sido tan fácil. Eleva tu experiencia de compra en línea con 'The Shopping Cart': donde la conveniencia se encuentra con la elegancia."
+    },
+    "SIMON_SAY": {
+      "SEO_DESCRIPTION": "'Simon Say' es una aplicación donde puedes poner a prueba tus habilidades de memorización de patrones de colores...",
+      "PARRAFO_BEGIN": "¡Bienvenido a 'Simon Say'! Sumérgete en la nostalgia con este clásico juego de memoria y habilidad. Diseñado para desafiar tus habilidades cognitivas, este juego ofrece una experiencia de juego",
+      "SPAN_1": " adictiva",
+      "PARRAFO_MIDDLE_1": "y",
+      "SPAN_2": " divertida",
+      "PARRAFO_MIDDLE_2": ". Pon a prueba tu habilidad para recordar secuencias de luces y sonidos, desbloquea niveles cada vez más desafiantes y compite por la puntuación más alta. Con una",
+      "SPAN_3": " colorida",
+      "PARRAFO_MIDDLE_3": "e",
+      "SPAN_4": " inmersiva",
+      "PARRAFO_END": "interfaz, te transporta de vuelta a la era de los juegos de mesa clásicos, ¡pero esta vez en la palma de tu mano! Prepárate para poner a prueba tu mente y superar tus límites con 'Simon Say'."
+    },
+    "MINESWEEPER": {
+      "SEO_DESCRIPTION": "El Buscaminas es un juego clásico donde tienes que encontrar todas las minas.",
+      "PARRAFO_BEGIN": "Bienvenido a nuestro proyecto de juego del Buscaminas, donde nuestro objetivo es ofrecer una experiencia de juego inmersiva que desafíe a jugadores de todos los niveles de habilidad. Aprovechando",
+      "SPAN_1": " LitElement",
+      "PARRAFO_MIDDLE_1": "y",
+      "SPAN_2": " Componentes Web",
+      "PARRAFO_MIDDLE_2": ", junto con HTML5 y JavaScript, nuestro juego garantiza",
+      "SPAN_3": " compatibilidad multiplataforma",
+      "PARRAFO_MIDDLE_3": "para un juego sin problemas. Con",
+      "SPAN_4": " controles intuitivos y gráficos cautivadores,",
+      "PARRAFO_END": "los jugadores pueden disfrutar de horas de entretenimiento mientras ponen a prueba sus habilidades de pensamiento estratégico. Únete a nosotros en la emocionante aventura del",
+      "SPAN_5": " Buscaminas!"
     }
   }
 }

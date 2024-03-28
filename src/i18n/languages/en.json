@@ -108,7 +108,7 @@
       "FIRST": {
         "PARRAFO_1": "Hi there! I'm",
         "SPAN": "Nicolás Carobene",
-        "PARRAFO_2": ", but my friends call me Nico 😎.",
+        "PARRAFO_2": "but my friends call me Nico 😎.",
         "PARRAFO_3": "I am an Argentine living in Madrid, Spain."
       },
       "SECOND": {
@@ -196,6 +196,65 @@
       "PARRAFO_MIDDLE_2": "browsing experience, designed to meet all your reading needs. With a",
       "SPAN_3": " wide selection",
       "PARRAFO_END": "of books from various genres and authors, you'll find exactly what you're looking for."
+    },
+    "TEST": {
+      "SEO_DESCRIPTION": "tecnical test skills for software development",
+      "PARRAFO_BEGIN": "This project is a",
+      "SPAN_1": " technical test",
+      "PARRAFO_MIDDLE_1": "focused on creating a",
+      "SPAN_2": " simple and fast web application",
+      "PARRAFO_MIDDLE_2": "for user convenience. To achieve this goal, we have chosen to use two frameworks that will help us ensure",
+      "SPAN_3": " speed",
+      "PARRAFO_MIDDLE_3": "and ease of use without compromising the",
+      "SPAN_4": " security",
+      "PARRAFO_MIDDLE_4": "and",
+      "SPAN_5": " robustness",
+      "PARRAFO_MIDDLE_5": "of the application. To do this, we have chosen Astro for the static parts of the application, allowing us to achieve more efficient loading. To do this, we have chosen",
+      "SPAN_6": " Astro",
+      "PARRAFO_MIDDLE_6": "for the static parts of the application, allowing us to achieve more efficient loading, and",
+      "SPAN_7": " Preact",
+      "PARRAFO_MIDDLE_7": "for implementing",
+      "SPAN_8": " Hooks",
+      "PARRAFO_MIDDLE_8": "and other development tools from the",
+      "SPAN_9": " React",
+      "PARRAFO_END": "library, but in a more compressed and lightweight form."
+    },
+    "SHOPPING_CARD": {
+      "SEO_DESCRIPTION": "Buy everything you want at the best price online, from the comfort of your home.",
+      "PARRAFO_BEGIN": "Discover 'The Shopping Cart', the perfect application for online shopping! Designed to pass a technical test, this application offers an interface",
+      "SPAN_1": " intuitive",
+      "PARRAFO_MIDDLE_1": "and",
+      "SPAN_2": " attractive",
+      "PARRAFO_MIDDLE_2": ", making your shopping experience easy and exciting. With features of",
+      "SPAN_3": " global state",
+      "PARRAFO_MIDDLE_3": "and options for",
+      "SPAN_4": " dynamic filtering",
+      "PARRAFO_END": "by categories and prices, finding and purchasing your desired products has never been easier. Elevate your online shopping experience with 'The Shopping Cart': where convenience meets elegance."
+    },
+    "SIMON_SAY": {
+      "SEO_DESCRIPTION": "'Simon Say' is an application where you can test your pattern memorization skills of colors...",
+      "PARRAFO_BEGIN": "Welcome to 'Simon Say'! Dive into nostalgia with this classic memory and skill game. Designed to challenge your cognitive abilities, this game offers an",
+      "SPAN_1": " addictive",
+      "PARRAFO_MIDDLE_1": "and",
+      "SPAN_2": " fun",
+      "PARRAFO_MIDDLE_2": "gaming experience. Test your ability to remember sequences of lights and sounds, unlock increasingly challenging levels, and compete for the highest score. With a",
+      "SPAN_3": " colorful",
+      "PARRAFO_MIDDLE_3": "and",
+      "SPAN_4": " immersive",
+      "PARRAFO_END": "interface, transports you back to the era of classic board games, but this time in the palm of your hand! Get ready to test your mind and push your limits with 'Simon Say'."
+    },
+    "MINESWEEPER": {
+      "SEO_DESCRIPTION": "Minesweeper is a classic game where you have to find all the mines.",
+      "PARRAFO_BEGIN": "Welcome to our Minesweeper game project, where we aim to deliver an immersive gaming experience that challenges players of all skill levels. Leveraging",
+      "SPAN_1": " LitElement",
+      "PARRAFO_MIDDLE_1": "and",
+      "SPAN_2": " Web Components",
+      "PARRAFO_MIDDLE_2": ", alongside HTML5 and JavaScript, our game ensures",
+      "SPAN_3": " cross-platform compatibility",
+      "PARRAFO_MIDDLE_3": "for seamless gameplay. Featuring",
+      "SPAN_4": " intuitive controls, and captivating graphics,",
+      "PARRAFO_END": "players can enjoy hours of entertainment while testing their strategic thinking skills. Join us in the thrilling adventure of",
+      "SPAN_5": " minesweeping!"
     }
   }
 }
