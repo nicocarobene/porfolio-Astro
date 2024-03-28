@@ -2,16 +2,18 @@
 import Link from "@/components/Link.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Github from "@/components/icons/Github.astro";
-import VsCode from "@/components/icons/VsCode.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
 import Develop from "@/components/icons/Develop.astro";
 import LinkIcon from "@/components/icons/Link.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="Test Skills | Nicodev | Porfolio"
-  description="tecnical test skills for software development"
+  description={i18n.PAGES.TEST.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
@@ -58,29 +60,25 @@ import LinkIcon from "@/components/icons/Link.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          This project is a
-          <span class="text-[#fffb52]"> technical test </span>
-          focused on creating a
-          <span class="text-[#fffb52]"> simple and fast web application </span>
-          for user convenience. To achieve this goal, we have chosen to use two frameworks
-          that will help us ensure
-          <span class="text-[#fffb52]"> speed </span>
-          and ease of use without compromising the
-          <span class="text-[#fffb52]"> security </span>
-          and
-          <span class="text-[#fffb52]"> robustness </span>
-          of the application. To do this, we have chosen Astro for the static parts
-          of the application, allowing us to achieve more efficient loading. To do
-          this, we have chosen
-          <span class="text-[#fffb52]">Astro</span>
-          for the static parts of the application, allowing us to achieve more efficient
-          loading, and
-          <span class="text-[#fffb52]"> Preact </span>
-          for implementing
-          <span class="text-[#fffb52]"> Hooks </span>
-          and other development tools from the
-          <span class="text-[#fffb52]"> React </span>
-          library, but in a more compressed and lightweight form.
+          {i18n.PAGES.TEST.PARRAFO_BEGIN}
+          <span class="text-[#fffb52]">{i18n.PAGES.TEST.SPAN_1}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">{i18n.PAGES.TEST.SPAN_2}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_3}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_3}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_4}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_4}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_5} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_5}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_6}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_6}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_7} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_7}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_8} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_8}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_9} </span>
+          {i18n.PAGES.TEST.PARRAFO_END}
         </p>
       </CardSeccion>
     </SectionContainer>

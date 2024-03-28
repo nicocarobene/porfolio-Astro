@@ -5,11 +5,14 @@ import Github from "@/components/icons/Github.astro";
 import LinkIcon from "@/components/icons/Link.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="Minesweeper | Nicodev | Porfolio"
-  description="Juego de buscaminas para mejorar tus habilidades de ..."
+  description={i18n.PAGES.MINESWEEPER.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
@@ -57,21 +60,18 @@ import CardSeccion from "@/components/CardSeccion.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          Welcome to our Minesweeper game project, where we aim to deliver an
-          immersive gaming experience that challenges players of all skill
-          levels. Leveraging
-          <span class="text-[#fffb52]"> LitElement </span>
-          and
-          <span class="text-[#fffb52]"> Web Components </span>
-          , alongside HTML5 and JavaScript, our game ensures
-          <span class="text-[#fffb52]"> cross-platform compatibility </span>
-          for seamless gameplay. Featuring
+          {i18n.PAGES.MINESWEEPER.PARRAFO_BEGIN}
+          <span class="text-[#fffb52]"> {i18n.PAGES.MINESWEEPER.SPAN_1} </span>
+          {i18n.PAGES.MINESWEEPER.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]"> {i18n.PAGES.MINESWEEPER.SPAN_2} </span>
+          {i18n.PAGES.MINESWEEPER.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.MINESWEEPER.SPAN_3} </span>
+          {i18n.PAGES.MINESWEEPER.PARRAFO_MIDDLE_3}
           <span class="text-[#fffb52]">
-            intuitive controls, and captivating graphics,
+            {i18n.PAGES.MINESWEEPER.SPAN_4}
           </span>
-          players can enjoy hours of entertainment while testing their strategic
-          thinking skills. Join us in the thrilling adventure of
-          <span class="text-[#fffb52]"> minesweeping! </span>
+          {i18n.PAGES.MINESWEEPER.PARRAFO_END}
+          <span class="text-[#fffb52]"> {i18n.PAGES.MINESWEEPER.SPAN_5} </span>
         </p>
       </CardSeccion>
     </SectionContainer>

@@ -6,11 +6,14 @@ import LinkIcon from "@/components/icons/Link.astro";
 import Layout from "@/layouts/Layout.astro";
 import CardSeccion from "@/components/CardSeccion.astro";
 import Develop from "@/components/icons/Develop.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <Layout
   title="Shopping Card | Nicodev | Porfolio"
-  description="Compra todo eso que deseas al mejor precio en linea, desde la comodidad de tu casa."
+  description={i18n.PAGES.SHOPPING_CARD.SEO_DESCRIPTION}
 >
   <header class="w-full flex px-4 pt-5 gap-2">
     <span
@@ -51,20 +54,23 @@ import Develop from "@/components/icons/Develop.astro";
           class="text-balance text-base py-2 pb-4 opacity-85"
           slot="description"
         >
-          ¡Descubre 'The Shopping Cart', la aplicación perfecta para comprar en
-          línea! Diseñada para superar una prueba técnica, esta aplicación
-          ofrece una interfaz
-          <span class="text-[#fffb52]"> intuitiva </span>
-          y
-          <span class="text-[#fffb52]"> atractiva </span>
-          , haciendo que tu experiencia de compra sea fácil y emocionante. Con funcionalidades
-          de
-          <span class="text-[#fffb52]"> estado global </span>
-          y opciones de
-          <span class="text-[#fffb52]"> filtrado dinámico </span>
-          por categorías y precios, encontrar y adquirir tus productos deseados nunca
-          ha sido tan sencillo. Eleva tu experiencia de compra en línea con 'The
-          Shopping Cart': donde la comodidad se encuentra con la elegancia.
+          {i18n.PAGES.SHOPPING_CARD.PARRAFO_BEGIN}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.SHOPPING_CARD.SPAN_1}
+          </span>
+          {i18n.PAGES.SHOPPING_CARD.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.SHOPPING_CARD.SPAN_2}
+          </span>
+          {i18n.PAGES.SHOPPING_CARD.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.SHOPPING_CARD.SPAN_3}
+          </span>
+          {i18n.PAGES.SHOPPING_CARD.PARRAFO_MIDDLE_3}
+          <span class="text-[#fffb52]">
+            {i18n.PAGES.SHOPPING_CARD.SPAN_4}
+          </span>
+          {i18n.PAGES.SHOPPING_CARD.PARRAFO_END}
         </p>
       </CardSeccion>
     </SectionContainer>
