@@ -36,16 +36,16 @@ const translatePath = useTranslatedPath(lang);
     <ul
       class="flex md:flex flex-col md:flex-row gap-2 md:gap-3 justify-center items-start md:items-center"
     >
-      <HeaderLink class="text__glowing" href="#">
+      <!-- <HeaderLink class="text__glowing" href="#">
         {t("nav.expirience")}
-      </HeaderLink>
-      <HeaderLink class="text__glowing" href="#projects">
+      </HeaderLink> -->
+      <HeaderLink class="text__glowing" href="/#projects">
         {t("nav.projects")}
       </HeaderLink>
-      <HeaderLink class="text__glowing" href="#aboutMe">
+      <HeaderLink class="text__glowing" href="/#aboutMe">
         {t("nav.aboutMe")}
       </HeaderLink>
-      <HeaderLink class="text__glowing" href="#contact">
+      <HeaderLink class="text__glowing" href="/#contact">
         {t("nav.contact")}
       </HeaderLink>
       <ThemeToggle />
@@ -57,7 +57,6 @@ const translatePath = useTranslatedPath(lang);
 <script is:inline>
   const $button = document.getElementById("menuToggle");
   const $nav = document.getElementById("navigator");
-  console.log();
   let navOpen = false;
   if ($button && $nav) {
     $button.addEventListener("click", () => {
