@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
-import vercelServerless from '@astrojs/vercel/serverless';
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,10 +12,11 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  output: 'hybrid',
-  adapter: vercelServerless({
+  output: 'static',
+  adapter: vercel({
     webAnalytics: {
       enabled: true
     }
   }),
+  devToolbar: { enabled: false },
 });
