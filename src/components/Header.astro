@@ -39,13 +39,13 @@ const translatePath = useTranslatedPath(lang);
       <!-- <HeaderLink class="text__glowing" href="#">
         {t("nav.expirience")}
       </HeaderLink> -->
-      <HeaderLink class="text__glowing" href="/#projects">
+      <HeaderLink class="text__glowing" href={translatePath("/#projects")}>
         {t("nav.projects")}
       </HeaderLink>
-      <HeaderLink class="text__glowing" href="/#aboutMe">
+      <HeaderLink class="text__glowing" href={translatePath("/#aboutMe")}>
         {t("nav.aboutMe")}
       </HeaderLink>
-      <HeaderLink class="text__glowing" href="/#contact">
+      <HeaderLink class="text__glowing" href={translatePath("/#contact")}>
         {t("nav.contact")}
       </HeaderLink>
       <ThemeToggle />
