@@ -36,12 +36,24 @@ export const routes = {
     aboutMe: "sobre-mi",
     contact: "contacto",
     extension: "extension",
+    feriaLibro: "feriaLibro",
+    minesweeper: "minesweeper",
+    shoppingCard: "shoppingCard",
+    simonSay: "simonSay",
+    test: "test",
+    wordle: "wordle"
   },
   en: {
     projects: "projects",
     aboutMe: "about me",
     contact: "contact",
     extension: "extension",
+    feriaLibro: "feriaLibro",
+    minesweeper: "minesweeper",
+    shoppingCard: "shoppingCard",
+    simonSay: "simonSay",
+    test: "test",
+    wordle: "wordle"
   }
 };
 export const defaultLang = 'en';

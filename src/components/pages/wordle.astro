@@ -1,0 +1,116 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout
+  title="Wordle | Nicodev | Porfolio"
+  description={i18n.PAGES.WORDLE.SEO_DESCRIPTION}
+>
+  <header class="w-full flex px-4 pt-5 gap-2 items-center">
+    <span
+      class="bg-gradient-to-r from-rose-500 to-orange-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <picture class="place-items-start" transition:name="wordle">
+        <source
+          srcset="/projects/gamesMobile.avif"
+          type="image/avif"
+          media="(max-width: 767px)"
+        />
+        <img src="/projects/games.png" alt="video games" class="size-7" />
+      </picture>
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">Wordle</h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Wordle" image="/projects/wordle.webp">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/wordle.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://wordle-one-alpha.vercel.app/">
+            <LinkIcon class:list={["size-7", "text-white"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/wordle">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          {i18n.PAGES.WORDLE.PARRAFO}<span class="text-[#fffb52]"
+            >{i18n.PAGES.WORDLE.SPAN_1}</span
+          >
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">{i18n.PAGES.WORDLE.SPAN_2}</span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_3} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_3}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_4} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_4}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_5} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_MIDDLE_5}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_6} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END}
+          <span class="text-[#fffb52]">{i18n.PAGES.WORDLE.SPAN_7} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.WORDLE.SPAN_8} </span>
+          {i18n.PAGES.WORDLE.PARRAFO_END_3}
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>

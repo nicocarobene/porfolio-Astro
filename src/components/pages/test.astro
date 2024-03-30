@@ -1,0 +1,98 @@
+---
+import Link from "@/components/Link.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Github from "@/components/icons/Github.astro";
+import Layout from "@/layouts/Layout.astro";
+import CardSeccion from "@/components/CardSeccion.astro";
+import Develop from "@/components/icons/Develop.astro";
+import LinkIcon from "@/components/icons/Link.astro";
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout
+  title="Test Skills | Nicodev | Porfolio"
+  description={i18n.PAGES.TEST.SEO_DESCRIPTION}
+>
+  <header class="w-full flex px-4 pt-5 gap-2">
+    <span
+      class="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full p-1 flex items-center w-16 justify-center"
+    >
+      <Develop
+        transition:name="testSkills"
+        class="w-8 h-8 bg-sky-600 p-1 rounded-full text-white"
+        slot="icon"
+      />
+    </span>
+    <h1 class="text-white text-3xl" transition:name="extencion">
+      Bazar Online
+    </h1>
+  </header>
+  <main class="max-w-[1200px] mx-auto">
+    <SectionContainer class="relative place-content-start justify-center mt-5">
+      <CardSeccion title="Bazar Online" image="/projects/bazarIcon.avif">
+        <video
+          slot="background"
+          autoplay
+          loop
+          muted
+          playsinline
+          id="main-video"
+          preload="metadata"
+          class="video object-cover object-left-top aspect-[52/48] w-full max-h-[500px] place-self-start rounded-xl"
+          src="/media/bazar-online.mp4"
+        >
+        </video>
+        <div
+          slot="links"
+          class="flex items-center ml-auto gap-3 bg-black/30 rounded-full p-2 px-4"
+        >
+          <Link href="https://bazar-online-ten.vercel.app/">
+            <LinkIcon class:list={["size-7"]} />
+          </Link>
+          <span class="opacity-65"> | </span>
+          <Link href="https://github.com/nicocarobene/bazarOnline">
+            <Github class:list={["size-7", "text-white"]} />
+          </Link>
+        </div>
+        <p
+          class="text-balance text-base py-2 pb-4 opacity-85"
+          slot="description"
+        >
+          {i18n.PAGES.TEST.PARRAFO_BEGIN}
+          <span class="text-[#fffb52]">{i18n.PAGES.TEST.SPAN_1}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_1}
+          <span class="text-[#fffb52]">{i18n.PAGES.TEST.SPAN_2}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_2}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_3}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_3}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_4}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_4}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_5} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_5}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_6}</span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_6}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_7} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_7}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_8} </span>
+          {i18n.PAGES.TEST.PARRAFO_MIDDLE_8}
+          <span class="text-[#fffb52]"> {i18n.PAGES.TEST.SPAN_9} </span>
+          {i18n.PAGES.TEST.PARRAFO_END}
+        </p>
+      </CardSeccion>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
