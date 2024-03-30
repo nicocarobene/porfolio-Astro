@@ -14,7 +14,9 @@ const { title, class: className, href = "#", nameTransition } = Astro.props;
   <div
     class={`flex gap-3 items-center w-full px-4 bg-gradient-to-r rounded-xl ${className}`}
   >
-    <h4 class="capitalize w-5/12" transition:name={nameTransition}>{title}</h4>
+    <h4 class="capitalize w-5/12" transition:name={nameTransition}>
+      {title}
+    </h4>
     <div class="z-10">
       <slot name="icon" />
     </div>

@@ -17,11 +17,11 @@ const i18n = getI18N({ currentLocale });
       <source srcset="/avatarMobile.avif" media="(max-width: 767px)" />
       <img src="/avatar.jpg" alt="image avatar nicodev" class="rounded-full" />
     </picture>
-    <div class="flex flex-col gap-3">
-      <div class="flex flex-col justify-center">
+    <div class="flex flex-col gap-5">
+      <div class="flex flex-col justify-center gap-1">
         <h2 class="text-2xl md:text-4xl lg:text-6xl flex items-center gap-2">
           Nico
-          <span class="bg-gray-500/55 rounded-full p-1">
+          <span class="bg-gray-500/55 rounded-full p-1 ml-4">
             <Develop class="size-5 lg:size-8" />
           </span>
         </h2>
@@ -56,7 +56,7 @@ const i18n = getI18N({ currentLocale });
     </div>
   </div>
   <h1
-    class="text-4xl lg:text-6xl text-center md:text-5xl my-5 text-[#b9fd4b] font-cascadia"
+    class="text-4xl lg:text-6xl text-center md:text-5xl my-5 text-[#b9fd4b] font-cascadia [text-shadow:_0px_0px_20px] shadow-[#b9fd4b]"
   >
     {i18n.PRESENTATION_SECCION.TITLE} 👽
   </h1>
