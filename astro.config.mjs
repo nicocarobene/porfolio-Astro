@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
 import tailwind from "@astrojs/tailwind";
-import vercel from '@astrojs/vercel/serverless';
-
+import vercelStatic from '@astrojs/vercel/static';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
@@ -13,8 +11,10 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: { enabled: true }
+  output: 'static',
+  adapter: vercelStatic({
+    webAnalytics: {
+      enabled: true
+    }
   }),
 });
