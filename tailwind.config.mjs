@@ -7,10 +7,10 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				cascadia: ['Cascadia Code', 'sans-serif']
+				cascadia: ["Cascadia Code", "sans-serif"]
 			},
 			textColor: {
-				'secondaryGreen': '#b9fd4b',
+				"secondaryGreen": "#b9fd4b",
 			}
 		},
 	},
